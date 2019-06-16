@@ -1,0 +1,116 @@
+#projects {
+  grid-area: projects;
+}
+#projects > h1 {
+  margin: 0;
+}
+#projects input {
+  display:none;
+}
+#projects input + label{
+  border-bottom: 2px dotted grey;
+  cursor: pointer;
+  color: #222222;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#projects input + label:hover {
+  border-bottom-color: black
+}
+#projects input:checked + label {
+  border-bottom-style: solid;
+}
+
+.wrapper { 
+  box-sizing: border-box;
+  display: none;
+  padding: 1rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+#softwareRadio:checked ~ #software,
+#gamesRadio:checked ~ #games,
+#websitesRadio:checked ~ #websites,
+#blenderRadio:checked ~ #blender 
+{
+  display: block;
+}
+
+.project {
+  background: #fafcfc;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(49,54,68,.05);
+  display: inline-grid;
+  grid-template-areas: 
+  "preview . title title"
+  "preview . description description"
+  "preview . read read"
+  "caption . tags url";
+  grid-template-columns: 10rem .5rem 13rem 2rem;
+  grid-template-rows: 4rem 7rem 2rem 2rem;
+  height: 15rem;
+  margin-right: 1rem;
+  overflow: hidden;
+  vertical-align: top;
+  width: 25.5rem;
+}
+.project > .preview {
+  grid-area: preview;
+  max-width: 100%;
+  overflow: hidden;
+}
+.project > .title {
+  border-radius: 3px 3px 0 0;
+  box-sizing: border-box;
+  grid-area: title;
+  height: 100%;
+  margin: auto;
+  max-width: 100%;
+  padding: 0.5rem;
+  vertical-align: middle;
+  width: auto;
+}
+.project > .readmore {
+  grid-area: read;
+}
+.project > .description {
+  grid-area: description;
+  white-space: normal;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.project > .url {
+  grid-area: url;
+  text-decoration: none;
+}
+.project > .url > img {
+  box-sizing: border-box; 
+  height: 100%;
+  padding: .2rem;
+  width: 100%;
+}
+.project > .caption {
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  color: white;
+  grid-area: caption;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0.5rem .5rem;
+  text-align: center;
+  width: 100%;
+}
+.project > .tags {
+  grid-area: tags;
+}
+.project > .tags::before {
+  content: " ";
+  background: black;
+  height: 1rem;
+  width: 100%;
+}
+.project > .tags > div {
+  display: inline-block;
+}

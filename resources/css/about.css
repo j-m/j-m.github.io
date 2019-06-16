@@ -1,0 +1,62 @@
+#about {
+  display: grid;
+  grid-area: about;
+  grid-template-areas: 
+  "picture"
+  "name"
+  "profile"
+  "social";
+  grid-template-columns: auto;
+  grid-template-rows: 18rem 2.5rem 10rem 5rem;
+}
+
+#picture {
+  border-radius: 50%;
+  display: block;
+  grid-area: picture;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#name{
+  grid-area: name;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#profile {
+  grid-area: profile;
+  text-align: justify;
+  text-indent:40px 
+}
+
+
+#social {
+  grid-area: social;
+  display: inline-block;
+  text-align: center;
+  height: 4rem;
+}
+#social a {
+  text-decoration: none;
+}
+#social * {
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+#github {
+  padding: 10%;
+}
+
+#linkedin{
+  padding: 14%;
+}
+
+#hackerrank{
+  padding: 10%;
+}

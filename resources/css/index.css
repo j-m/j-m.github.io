@@ -1,0 +1,21 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background: #edf1f5;
+  color: #222222;
+  display: grid;
+  grid-template-areas: 
+  ". about . projects"
+  ". about . experiences"
+  ". about . education"
+  "footer footer footer footer";
+  grid-template-columns: 18vw 22vw 2vw 57vw 1vw;
+  margin: 4rem 0 0 0;
+}
+
+footer {
+  grid-area: footer;
+}

@@ -1,32 +1,190 @@
-<style>
-  html{
-    font-size: 1vw;
-  }
-  body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 3rem;
-    font-weight: bolder;
-    color: #222222;
-    margin: 2rem;
-    text-align: center;
-  }
-  a{
-    text-decoration: none;
-  }
-  a:hover{
-    text-decoration: underline;
-  }
-  a *{
-    height: 10rem;
-  }
-</style>
-<p>Hello!</p>
-<p>I have taken my server offline while I redesign everything</p>
-<p>If you would like to see a demo of any of my projects then please email me at</p>
-<p><a href="mailto:hello@jonmarsh.dev">hello@jonmarsh.dev</a></p>
-<a href="https://github.com/j-m" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/></a>
-<a href="https://stackoverflow.com/users/4907552" target="_blank"><img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg?v=f13ebeedfa9e"/></a>
-<a href="https://www.linkedin.com/in/jonrmarsh/" target="_blank">
- <img src="./SVG/img/logo/linkedin.svg"/>
-</a>
+<!DOCTYPE html>
+<html>
 
+<head>
+  <title>Jonathan Marsh</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Jonathan Marsh">
+  <meta name="description" content="All about Jonathan Marsh">
+  <meta name="keywords" content="Software Engineer,Computer Scientist">
+  <meta name="language" content="english"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link type="text/css" rel="stylesheet" href="./resources/css/index.css"/>
+  <link type="text/css" rel="stylesheet" href="./resources/css/about.css"/>
+  <link type="text/css" rel="stylesheet" href="./resources/css/projects.css"/>
+  <link type="text/css" rel="stylesheet" href="./resources/css/experience.css"/>
+  <link type="text/css" rel="stylesheet" href="./resources/css/education.css"/>
+</head>
+
+<body>
+  <div id="about">
+    <img id="picture" src="./resources/images/me_square.png"/>
+    <p id="name">Jonathan Marsh</p>
+    <p id="profile">Studying Computer Science BSc (Hons) at Coventry University and on track to achieve a first with the ambition to pursue a career in Software Engineering. </p>
+    <div id="social">
+      <a href="https://github.com/j-m"><img id="github" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
+      <a href="https://stackoverflow.com/users/4907552"><img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg"/></a>
+      <a href="https://www.linkedin.com/in/jonrmarsh/"><img id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"/></a>
+      <a href="https://www.hackerrank.com/jaunt"><img id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg"/></a>
+    </div>
+  </div>
+
+  <div id="projects">
+    <h1>Projects</h1>
+    <input type="radio" name="projectsView" value="software" id="softwareRadio" checked/><label for="softwareRadio">Software</label>
+    <input type="radio" name="projectsView" value="games" id="gamesRadio"/><label for="gamesRadio">Games</label>
+    <input type="radio" name="projectsView" value="websites" id="websitesRadio"/><label for="websitesRadio">Websites</label>
+    <input type="radio" name="projectsView" value="blender" id="blenderRadio"/><label for="blenderRadio">Blender</label>
+    <div class="wrapper" id="software">
+      <div class="project">
+          <h2 class="title">210CT</h2>
+        <p class="description">Programming, Algorithms, and Data Structures. console application. 13 complex tasks e.g. N-Queen Problem, Hamiltonian Paths, and string edit distance.C++ templates which automatically detected the data type of user input. I also sanitised, type checked, and error checked their input. </p>
+        <a class="readmore" href="./projects/software/210ct">Read more</a>
+        <a class="url" href=""></a>
+        <p class="caption">Private Repository</p>
+        <div class="tags">
+          <div>C++</div>
+        </div>
+      </div>
+      <div class="project">
+        <img class="title" src="./projects/software/oaty/logo.jpg">
+        <p class="description">Get objects from an array in O(1) time. Achieved by transposing the array using the keys of each object. Uses a lot of memory.</p>
+        <a class="readmore" href="./projects/software/oaty">Read more</a>
+        <a class="url" href="https://github.com/jmsv/oaty"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
+        <p class="caption"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/jmsv/oaty.svg"></p>
+        <div class="tags">
+          <div>TypeScript</div>
+        </div>
+      </div>
+      <div class="project">
+        <img class="title" src="./projects/software/browsability/logo.svg">
+        <p class="description">A browser compatibilty anaylser. Scans your repositories for any CSS, HTML, and JavaScript and figures out the minimum version each browser supports.</p>
+        <a class="readmore" href="./projects/software/browsability">Read more</a>
+        <a class="url" href="https://github.com/j-m/browsability"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
+        <p class="caption"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/j-m/browsability.svg"></p>
+        <div class="tags">
+          <div>JavaScript</div>
+          <div>HTML</div>
+          <div>CSS</div>
+        </div>
+      </div>
+      <div class="project">
+        <img class="title" src="./projects/software/faktnews/logo.svg">
+        <p class="description">FaktNews grades the trustworthiness of the website you're currently viewing.</p>
+        <a class="readmore" href="./projects/software/faktnews">Read more</a>
+        <a class="url" href="https://github.com/j-m/faktnews"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
+        <p class="caption"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/j-m/faktnews.svg"></p>
+        <div class="tags">
+          <div>TypeScript</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper" id="games">
+      <div class="project">
+        <h2 class="title">pulfrich-bird</h2>
+        <img class="preview" src="./projects/games/pulfrich-bird/preview.png">
+        <p class="description">3D Flappy Bird using the pulfrich effect. Get a pair of dark tinted sunglasses and pop out the left lens, and play away!</p>
+        <a class="readmore" href="./projects/games/pulfrich-bird">Read more</a>
+        <a class="url" href="https://github.com/j-m/pulfrich-bird"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
+        <p class="caption"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/j-m/pulfrich-bird.svg"></p>
+        <div class="tags">
+          <div>JavaScript</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper" id="websites">
+    </div>
+
+    <div class="wrapper" id="blender">
+    </div>    
+  </div>
+  <div id="experiences">
+    <h1>Experience</h1>
+    <div class="experience">
+      <a class="company-logo" href="https://www.pcmsgroup.com/"><img class="image" src="./companies/pcmsgroup/logo.png"></a>
+      <p class="company-name">PCMS Group Ltd</p>
+      <p class="location">Huntingdon, UK</p>
+      <p class="role">Development Placement Student</p>
+      <p class="dates">July 2018 - July 2019</p>
+      <p class="description">
+        Using feature branches and test automation, I learned what it was like to write code for an ever-changing codebase. I learned Java, Mercurial, IntelliJ, DB2. Most of what I did this year was around fixing defects. This heavily relies on my ability to debug applications and suss out potential issues; it also improved my ability to work on top of existing code and recognise when it is appropriate to refactor code. 
+        The most important takeaway for me this year was test automation. 
+        Test are invaluable for large codebases or multi-team projects. 
+        I learned how to write Selenium integration tests and BDD Mockito unit tests, as well as several other in-house testing frameworks. 
+        We used the Atlassian package for its ticketing system (Jira), code review (Crucible + FishEye), and documentation (Confluence). 
+        We followed the Agile + Scrum methodology and for the final 4 months I was the Scrum Master for my team. 
+        I also created a GraphQL API which parses a Confluence Page of a merge calendar and made a Microsoft Teams bots that can query it. 
+        I learned what it was like to work remotely with the rest of my team, and work on something from inception to completion. 
+      </p>
+      <a href="./companies/pcmsgroup">Read more</a>
+      <div class="tags">
+        <div>Java</div><div>TypeScript</div><div>GraphQL</div><div>Selenium</div><div>BDD Mockito</div><div>IntelliJ</div><div>VSCode</div><div>Atlassian</div><div>Agile</div>
+      </div>
+    </div>
+  </div>
+  <div id="educations">
+    <h1>Education</h1>
+    <div class="education">
+      <h3 class="type">Computer Science BSc (Hons) (BCS certified)</h3>
+      <div>
+        <p class="place">Coventry University</p>
+        <p class="dates">September 2016 - Present</p>
+        <div class="description">
+          <p>Year 2 - First</p>
+          <ul>
+            <li>92% - Programming, Algorithms, and Data Structures</li>
+            <li>83% - Technology and its Social, Legal and Ethical Context</li>
+            <li>82% - Real World Project</li>
+            <li>81% - Software Engineering</li>
+            <li>78% - Operating Systems, Security, and Networks</li>
+            <li>71% - Data and Information Retrieval</li>
+            <li>62% - Leading & Inspiring People (CMI)</li>
+          </ul>
+          <p>Year 1 - First</p>
+          <ul>
+            <li>93% - Computer Architecture and Networks</li>
+            <li>89% - Introduction to Computing</li>
+            <li>87% - Logic and Sets</li>
+            <li>84% - Introduction to Algorithms	•	75% - Introduction to Leadership (CMI)</li>
+            <li>70% - Designing for Usability</li>
+            <li>68% - Enterprise Information Systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="education">
+      <h3 class="type">A Levels</h3>
+      <p class="place">Hills Road Sixth Form College</p>
+      <p class="dates">September 2014 - July 2016</p>
+      <div class="description">
+        <ul>
+          <li>B in Computing</li>
+          <li>C in Mathematics Mechanics</li>
+          <li>C in Physics</li>
+          <li>C in Extended Project Qualification – “Create a 3D game framework and design a game using it”</li>
+        </ul>
+      </div>
+    </div>
+    <div class="education">
+      <h3 class="type">GCSEs (+others)</h2>
+      <p class="place">Swavesey Village College</p>
+      <p class="dates">September 2009 - July 2014</p>
+      <div class="description">
+        <p>14 GCSE’s: 3 A*, 4 A, 2 B & 3 C excluding:</p>
+        <ul>
+          <li>Distinction* in IT</li>
+          <li>Pass in Functional Skills</li>
+          <li>A in English</li>
+          <li>A* in Mathematics</li>
+          <li>C in Additional Mathematics (FMSQ, non-GCSE)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <p>Copyright &copy; since 2019 by Jonathan Marsh. All information was accurate at the time of writing. If you would like to change or dispute something, please contact me at <a href="mailto:hello@jonmarsh.dev">hello@jonmarsh.dev</a></p>
+</footer>
+</html>
