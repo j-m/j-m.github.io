@@ -42,10 +42,15 @@
 }
 #social a {
   text-decoration: none;
-}
-#social * {
   height: 100%;
   display: inline-block;
+  box-sizing: content-box;
+}
+#social a:hover {
+  border-bottom: 3px solid black;
+}
+#social a img {
+  height: 100%;
   box-sizing: border-box;
 }
 
