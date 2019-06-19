@@ -12,7 +12,7 @@ body {
   ". about . experiences"
   ". about . education"
   "footer footer footer footer";
-  grid-template-columns: 18vw 22vw 2vw 57vw 1vw;
+  grid-template-columns: 18vw 22vw 2vw 55vw 3vw;
   margin: 4rem 0 0 0;
 }
 
