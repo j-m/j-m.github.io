@@ -112,12 +112,14 @@
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0.5rem .5rem;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   width: 100%;
 }
 .project > .tags {
   grid-area: tags;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .project > .tags::before {
   content: " ";
