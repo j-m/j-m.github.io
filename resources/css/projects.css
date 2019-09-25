@@ -52,27 +52,30 @@
 }
 
 .project {
+  position: relative;
   background: #fafcfc;
   border-radius: 3px;
   box-shadow: 0 4px 6px rgba(49,54,68,.05);
   display: inline-grid;
   grid-template-areas: 
-  "preview . title title"
-  "preview . description description"
-  "preview . read read"
-  "caption . tags url";
-  grid-template-columns: 10rem .5rem 13rem 2rem;
-  grid-template-rows: 4rem 7rem 2rem 2rem;
+  "preview title title"
+  "preview description description"
+  "preview read read"
+  "caption tags url";
+  grid-template-columns: 10rem 1fr 2rem;
+  grid-template-rows: 4rem 1fr 2rem 2rem;
   height: 15rem;
   margin-right: 1rem;
   overflow: hidden;
   vertical-align: top;
   width: 25.5rem;
+  grid-gap: 0.5rem;
 }
 .project > .preview {
-  grid-area: preview;
-  max-width: 100%;
-  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1/5;
+  min-height: 100%;
+  width:100%;
 }
 .project > .title {
   border-radius: 3px 3px 0 0;
@@ -93,6 +96,7 @@
   white-space: normal;
   font-size: 0.8rem;
   margin: 0;
+  overflow: auto;
 }
 .project > .url {
   grid-area: url;
