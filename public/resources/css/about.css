@@ -1,0 +1,67 @@
+#about {
+  position: sticky;
+  top: 4rem;
+  height: fit-content;
+  width: fit-content;
+  grid-area: about;
+  display: grid;
+  grid-template-areas: 
+  "picture"
+  "name""social"
+  "info"
+  ;
+  grid-template-rows: auto auto auto 1fr;
+}
+
+#picture {
+  border-radius: 50%;
+  display: block;
+  grid-area: picture;
+  margin: 0 auto;
+  height: 15rem;
+  width: 15rem;
+}
+
+#name{
+  grid-area: name;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#social {
+  grid-area: social;
+  text-align: center;
+  height: 3rem;
+}
+#social a {
+  text-decoration: none;
+  height: 3rem;
+  display: inline-block;
+  box-sizing: content-box;
+}
+#social a:hover {
+  border-bottom: 3px solid black;
+}
+#social a img {
+  height: 3rem;
+  box-sizing: border-box;
+}
+
+#github {
+  padding: 10%;
+}
+
+#linkedin{
+  padding: 14%;
+}
+
+#hackerrank{
+  padding: 10%;
+}
+
+#info {
+  grid-area: info;
+  overflow: auto;
+}
