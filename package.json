@@ -44,6 +44,6 @@
     "prep": ["build"],
     "commit": "Automated publish",
     "post": [],
-    "noprompt": false
+    "noprompt": true
   }
 }
