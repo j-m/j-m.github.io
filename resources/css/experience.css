@@ -1,0 +1,43 @@
+#experiences {
+  grid-area: experiences;
+}
+
+.experience {
+  display: grid;
+  grid-template-areas: 
+  "logo description"
+  "name description"
+  "dates description"
+  "role description"
+  "location description"
+  "tags tags";
+  grid-template-columns: min-content auto;
+}
+
+.experience .company-logo {
+  grid-area: logo;
+}
+
+.experience .location {
+  grid-area: location;
+}
+
+.experience .role {
+  grid-area: role;
+}
+
+.experience .dates {
+  grid-area: dates;
+}
+
+.experience .description {
+  grid-area: description;
+}
+
+.experience .tags {
+  grid-area: tags;
+}
+
+.experience .tags > div {
+  display: inline-block;
+}

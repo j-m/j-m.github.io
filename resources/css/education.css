@@ -1,0 +1,4 @@
+#educations {
+  grid-area: education;
+  display: grid;
+}
