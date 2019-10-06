@@ -5,5 +5,5 @@
 
   import { addRoute } from '../data/routes.js'
 
-  addRoute({title, component, path})
+  addRoute(title, component, path)
 </script>

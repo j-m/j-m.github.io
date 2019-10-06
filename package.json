@@ -24,9 +24,10 @@
     "build:dev": "rollup -c src/rollup.config.js -w",
     "deploy": "gh-pages -d public",
     "open": "start ./public/index.html",
-    "open:dev": "sirv ./public --single --dev",
-    "start": "run-p build open",
-    "start:dev": "run-p build:dev open:dev"
+    "open:dev": "sirv ./public --cors --single 404.html --dev",
+    "publish": "run-s build deploy",
+    "start": "run-s build open",
+    "start:dev": "run-s build:dev open:dev"
   },
   "repository": {
     "type": "git",

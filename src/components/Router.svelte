@@ -4,17 +4,13 @@
 
   import { get } from "svelte/store"
 
-  import { path } from '../data/path.js'
   import { routes } from '../data/routes.js'
 
-  let component = defaultComponent;
-  path.subscribe(path => {
-    get(routes).filter(item => {
-      if (item.path === path) {
-        component = item.component;
-      }
-    })
-	});
+  const route = get(routes)[document.location.pathname]
+  const component =  (route) ? route.component : defaultComponent
 </script>
+
+routes {get(routes)}
+route {route}
 
 <svelte:component this='{component}'/>
