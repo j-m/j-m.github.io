@@ -12,35 +12,34 @@
   box-shadow: 0 .5rem .5rem rgba(50,50,50,0.1);
   display: inline-grid;
   grid-template-areas: 
-  "preview title title"
-  "preview description description"
-  "preview read read"
-  "caption tags url";
-  grid-template-columns: 10rem 1fr 2rem;
-  grid-template-rows: 4rem 1fr 2rem 2rem;
+  "preview . agedate agedate"
+  "preview . title title"
+  "preview . description description"
+  "preview . read read "
+  "caption . tags url";
+  grid-template-columns: 10rem .2rem  1fr  min-content;
+  grid-template-rows: min-content min-content 1fr  min-content 2rem;
   height: 15rem;
   margin: 1rem;
   overflow: hidden;
   vertical-align: top;
   flex: 25rem 1;
   max-width: 30rem;
-  grid-gap: 0.5rem;
-
-  text-align: justify;
 }
 
 .project > .preview {
   grid-column: 1;
-  grid-row: 1/5;
+  grid-row: 1/6;
   min-height: 100%;
   width:100%;
+  object-fit: cover;
 }
 
 .project > .title {
   border-radius: 3px 3px 0 0;
   box-sizing: border-box;
   grid-area: title;
-  max-height: 100%;
+  height: 4rem;
   margin: auto auto 0 auto;
   max-width: 100%;
   padding: 0.5rem;
@@ -49,8 +48,17 @@
   text-align: center;
 }
 
+.project .date {
+  grid-area: agedate;
+  margin: 0 0.2rem 0 0;
+  font-size: small;
+  text-align: right;
+}
+
 .project > .readmore {
   grid-area: read;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .project > .description {
@@ -65,6 +73,8 @@
 .project > .url {
   grid-area: url;
   text-decoration: none;
+  width: 2rem;
+  text-align: right;
 }
 
 .project > .url > img {
@@ -75,16 +85,15 @@
 }
 
 .project > .caption {
-  background: rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  color: white;
   grid-area: caption;
-  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   margin: 0;
-  overflow: hidden;
-  padding: 0.5rem 0.5rem;
+  line-height: 2rem;
   text-align: center;
-  width: 100%;
+}
+
+.project .loading {
+  margin: 0;
 }
 
 .project > .tags {
@@ -103,7 +112,7 @@
 .tag{
 	display: inline-block;
 	padding: .25rem .5rem;
-	margin: 0 .2rem .25rem 0;
+	margin: 0 .2rem 0 0;
 	
 	background: #0098e2;
 	color:white;

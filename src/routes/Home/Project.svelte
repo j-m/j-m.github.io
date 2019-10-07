@@ -1,11 +1,12 @@
 <script>
-  export let logo;
-  export let title;
+  export let age;
+  export let caption;
+  export let date;
   export let description;
   export let github;
-  export let caption;
+  export let logo;
   export let preview;
-  export let date;
+  export let title;
 
   import { onMount } from 'svelte';
   import { getTags } from '../../data/tagable.js';
@@ -21,6 +22,7 @@
 
 
 <div class="project">
+  <p class="date">Age: {age} | Date: <time datetime="2018/02/24">{date}</time></p>
   {#if logo}
   <img class="title" alt='logo' src='{logo}'/>
   {:else}

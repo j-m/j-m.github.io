@@ -1,0 +1,33 @@
+body{
+	background: #eee;
+	margin:0;
+	display: flex;
+	flex-direction:column;
+	min-height:100vh;
+}
+
+img{
+	position:absolute;
+	bottom:0;
+	z-index:-1;
+	width:400px;
+}
+
+#container{
+	width:800px;
+	height:600px;
+	margin:auto;
+	position:relative;
+}
+
+#container canvas{
+	background:#5D801C;
+}
+
+#container p{
+	position:absolute;
+	top:100%;
+	font-family: Open Sans, sans-serif;
+	text-align:center;
+	width:100%;
+}

@@ -10,7 +10,4 @@
   const component =  (route) ? route.component : defaultComponent
 </script>
 
-routes {get(routes)}
-route {route}
-
 <svelte:component this='{component}'/>
