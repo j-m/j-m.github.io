@@ -7,7 +7,7 @@ export function getTags(source) {
 }
 
 export async function load(){ 
-  const data = await fetch(`tagable.json`, { 
+  const data = await fetch(`resources/data/tagable.json`, { 
     headers : {  
       'Content-Type': 'application/json', 
       'Accept': 'application/json' 
