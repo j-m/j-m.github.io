@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+		<title>The Space Game!</title>
+		<style type="text/css">
+			@import url(CSS/Style.css);
+		</style>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<div class = "Container">
+			<div style='text-align: center; float: center; left:10px; top:10px;' class="fb-like" data-href="http://thefunnyzone.co.uk/Rocket.shtml" data-send="false" data-width="450" data-show-faces="false"></div>
+			<p align ="center"><font size ="6">Views:
+			<!--#include virtual="/RocketCounter/count.cgi?page=Rocket&type=text"--></font></p>
+			<div class = "Game" align="center">
+				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="Rocket" ALIGN="">
+					<embed class="Outline" src="Rocket.swf" menu=false quality=best bgcolor=#FFFFFF NAME="Rocket" ALIGN="" WIDTH="50%" HEIGHT="60%" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></embed>
+				</object>
+			</div>
+			</br>
+			<p align="center">
+				Use the Arrow Keys to play!</br>
+				Up, Down, Left and Right move your ship in the corresponding direction.</br>
+				A Leaderboard and comments section are undergoing development currently!</br>
+				Have fun!</br></br>
+				<font size = "5">If there's just a white screen reload the page!</font>
+			</p>
+		</div>
+	</body>
+</html>
