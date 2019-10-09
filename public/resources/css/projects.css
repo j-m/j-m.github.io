@@ -36,16 +36,21 @@
 }
 
 .project > .title {
-  border-radius: 3px 3px 0 0;
-  box-sizing: border-box;
   grid-area: title;
-  height: 4rem;
-  margin: auto auto 0 auto;
+  max-height: 4rem;
+}
+
+.project > h2.title {
+  margin: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.project > img.title {
+  box-sizing: border-box;
+  margin: auto;
   max-width: 100%;
   padding: 0.5rem;
-  vertical-align: middle;
-  width: auto;
-  text-align: center;
 }
 
 .project .date {
