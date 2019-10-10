@@ -13,7 +13,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
-    "sirv-cli": "^0.4.4",
+    "sirv-cli": "^1.0.0-next.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
@@ -24,7 +24,7 @@
     "build:dev": "rollup -c src/rollup.config.js -w",
     "deploy": "gh-pages -d public",
     "open": "start ./public/index.html",
-    "open:dev": "sirv ./public --cors --single ./public/404.html --dev",
+    "open:dev": "sirv ./public --cors --single 404.html --dev",
     "publish": "run-s build deploy",
     "start": "run-s build open",
     "start:dev": "run-p build:dev open:dev"
