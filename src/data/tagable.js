@@ -6,13 +6,13 @@ export function getTags(source) {
   return tagable.getTagsByResourceID(source)
 }
 
-export async function load(){ 
-  const data = await fetch(`resources/data/tagable.json`, { 
-    headers : {  
-      'Content-Type': 'application/json', 
-      'Accept': 'application/json' 
-     } 
-  }).then(response => response.json()); 
-  tagable.import(data) 
-  return tagable._resources.data 
+export async function load() {
+  const data = await fetch(`${document.location.origin}/resources/data/tagable.json`, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  }).then(response => response.json());
+  tagable.import(data)
+  return tagable._resources.data
 } 
