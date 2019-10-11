@@ -7,6 +7,7 @@
   import { routes } from '../data/routes.js'
 
   const route = get(routes)[document.location.pathname]
+  document.title = (route) ? route.title : defaultTitle
   const component =  (route) ? route.component : defaultComponent
 </script>
 

@@ -7,6 +7,6 @@
   import Sitemap from './Sitemap.svelte'
 </script>
 
-<Router defaultTitle="Jonathan Marsh - Home" defaultComponent="{Home}"/>
 <Route title="Jonathan Marsh - Privacy" path="/privacy" component="{Privacy}"/>
 <Route title="Jonathan Marsh - Sitemap" path="/sitemap" component="{Sitemap}"/>
+<Router defaultTitle="Jonathan Marsh - Home" defaultComponent="{Home}"/>
