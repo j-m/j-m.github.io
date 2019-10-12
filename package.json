@@ -17,7 +17,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "tagable": "^0.2.0"
+    "tagable": "^0.3.1"
   },
   "scripts": {
     "build": "rollup -c src/rollup.config.js",

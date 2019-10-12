@@ -1,7 +1,8 @@
 <script>
-  export let tagID;
+  export let tagID
+  export let title
 </script>
 
 <a href="tag/{tagID}">
-  <div class="tag">{tagID}</div>
+  <div class="tag">{title}</div>
 </a>

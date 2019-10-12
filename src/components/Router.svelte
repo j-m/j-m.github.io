@@ -1,14 +1,20 @@
 <script>
   export let defaultTitle;
   export let defaultComponent;
+  export let defaultProps = [];
 
   import { get } from "svelte/store"
 
   import { routes } from '../data/routes.js'
 
-  const route = get(routes)[document.location.pathname]
-  document.title = (route) ? route.title : defaultTitle
-  const component =  (route) ? route.component : defaultComponent
+  let component = defaultComponent
+  let props = defaultProps
+  routes.subscribe(value => {
+		const route = value[document.location.pathname]
+    document.title = (route) ? route.title : defaultTitle
+    component =  (route) ? route.component : defaultComponent
+    props = (route) ? route.props : defaultProps
+	})
 </script>
 
-<svelte:component this='{component}'/>
+<svelte:component this={component} {...props}/>
