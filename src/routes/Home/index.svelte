@@ -3,5 +3,5 @@
   import Filter from './Filter.svelte';
 </script>
 
-<Filter/>
+<!--Filter/-->
 <Projects/>

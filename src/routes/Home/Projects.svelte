@@ -1,21 +1,20 @@
 <script>
-  import { onMount } from 'svelte';
-  import { load } from '../../data/tagable.js';
+  import { onMount } from 'svelte'
 
-  import Project from './Project.svelte';
+  import { getResources } from "../../data/tagable.js"
 
-  let projects = [];
-  onMount(async function(){
-    projects = await load();
-  });
+  import Project from "./Project.svelte"
+
+  let projects = []
+  onMount(async () => {
+    projects = await getResources()
+  })
 </script>
 
 <div id="projects">
-{#if projects}
-{#each projects as project}
-  <Project {...project.data} />
-{/each}
-{:else}
-<p class="loading">Loading projects...</p>
-{/if}
+  {#each Object.entries(projects) as [id, data]}
+    <Project {id} {...data} />
+  {:else}
+    <p class="loading">Loading projects...</p>
+  {/each}
 </div>
