@@ -10,11 +10,11 @@
   export let title
 
   import { onMount } from 'svelte'
-  import { getTagsByResourceID, getTagByID } from '../../data/tagable.js'
+  import { getTagsByResourceID } from '../../data/tagable.js'
 
   import Tag from './Tag.svelte'
 
-  let tags
+  let tags = {}
 
   onMount(async function() {
     tags = await getTagsByResourceID(id)
@@ -37,12 +37,10 @@
   {/if}
   <p class="caption">{@html caption}</p>
   <div class="tags">
-  {#if tags}
-  {#each tags as tag}
-    <Tag {...tag} />
-  {/each}
+  {#each Object.entries(tags) as [id, tag]}
+    <Tag {id} {...tag} />
   {:else}
-  <p class="loading">Loading tags</p>
-  {/if}
+    <p class="loading">Loading tags</p>
+  {/each}
   </div>
 </div>

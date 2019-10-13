@@ -1,18 +1,17 @@
 {
 "tags":{
-  "TypeScript":{"title": "TypeScript"},
-  "C":{"title": "C"},
-  "C++":{"title": "C++"},
-  "C#":{"title": "C#"},
-  "Delphi":{"title": "Delphi"},
-  "Svelte":{"title": "Svelte"},
-  "Fake News":{"title": "Fake News"},
-  "3D":{"title": "3D"},
-  "JavaScript":{"title": "JavaScript"},
-  "SVG":{"title": "SVG"},
-  "Action Script 2":{"title": "Action Script 2"},
-  "CW":{"title": "CW", "description": "All work relating to coursework from university, sixth form, or otherwise."},
-  "Winner":{"title": "Winner", "description": "This project recieved an award at a hackathon."}
+  "TypeScript":{"badge": "<div class='tag'>TypeScript</div>", "title": "TypeScript"},
+  "C":{"badge": "<div class='tag'>C</div>", "title": "C"},
+  "C++":{"badge": "<div class='tag'>C++</div>", "title": "C++"},
+  "C#":{"badge": "<div class='tag'>C#</div>", "title": "C#"},
+  "Delphi":{"badge": "<div class='tag'>Delphi</div>", "title": "Delphi"},
+  "Svelte":{"badge": "<div class='tag'>Svelte</div>", "title": "Svelte"},
+  "3D":{"badge": "<div class='tag'>3D</div>", "title": "3D"},
+  "JavaScript":{"badge": "<div class='tag'>JavaScript</div>", "title": "JavaScript"},
+  "SVG":{"badge": "<div class='tag'>SVG</div>", "title": "SVG"},
+  "Action Script 2":{"badge": "<div class='tag'>Action Script 2</div>", "title": "Action Script 2"},
+  "CW":{"badge": "<div class='tag'>Coursework</div>", "title": "Coursework", "description": "All work relating to coursework from university, sixth form, or otherwise."},
+  "Winner":{"badge": "<div class='tag'>Winner</div>", "title": "Winner", "description": "This project recieved an award at a hackathon."}
 },
 "tagged":[
   {"resourceID":"210CT","tagID":"TypeScript"},

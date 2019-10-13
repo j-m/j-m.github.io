@@ -920,27 +920,43 @@ var app = (function () {
         };
         Tagable.prototype.tagResource = function (tagged) {
             if (this._resources[tagged.resourceID] === undefined) {
-                throw Error("Unknown resource '" + tagged.resourceID + "'");
+                throw ReferenceError("Unknown resource '" + tagged.resourceID + "'");
             }
             if (this._tags[tagged.tagID] === undefined) {
-                throw Error("Unknown tag '" + tagged.tagID + "'");
+                throw ReferenceError("Unknown tag '" + tagged.tagID + "'");
             }
             this._tagged.push(tagged);
         };
         Tagable.prototype.getTags = function (resourceID) {
             var _this = this;
+            if (this._resources[resourceID] === undefined) {
+                throw ReferenceError("Unknown resource '" + resourceID + "'");
+            }
             var tagged = this._tagged.get('resourceID', resourceID);
-            return tagged.map(function (tag) { return (_this._tags[tag.tagID]); });
+            if (tagged === undefined) {
+                return {};
+            }
+            var result = {};
+            tagged.forEach(function (tag) { result[tag.tagID] = _this._tags[tag.tagID]; });
+            return result;
         };
         Tagable.prototype.getResources = function (tagID) {
             var _this = this;
+            if (this._tags[tagID] === undefined) {
+                throw ReferenceError("Unknown tag '" + tagID + "'");
+            }
             var tagged = this._tagged.get('tagID', tagID);
-            return tagged.map(function (tag) { return (_this._resources[tag.resourceID]); });
+            if (tagged === undefined) {
+                return {};
+            }
+            var result = {};
+            tagged.forEach(function (tag) { result[tag.resourceID] = _this._resources[tag.resourceID]; });
+            return result;
         };
         return Tagable;
     }());
     exports.Tagable = Tagable;
-    //# sourceMappingURL=Tagable.js.map
+
     });
 
     unwrapExports(Tagable_1);
@@ -973,13 +989,11 @@ var app = (function () {
     const file = "src\\routes\\Home\\Tag.svelte";
 
     function create_fragment$2(ctx) {
-    	var a, div, t, a_href_value;
+    	var a, a_href_value;
 
     	const block = {
     		c: function create() {
     			a = element("a");
-    			div = element("div");
-    			t = text(ctx.title);
     			this.h();
     		},
 
@@ -987,34 +1001,26 @@ var app = (function () {
     			a = claim_element(nodes, "A", { href: true }, false);
     			var a_nodes = children(a);
 
-    			div = claim_element(a_nodes, "DIV", { class: true }, false);
-    			var div_nodes = children(div);
-
-    			t = claim_text(div_nodes, ctx.title);
-    			div_nodes.forEach(detach_dev);
     			a_nodes.forEach(detach_dev);
     			this.h();
     		},
 
     		h: function hydrate() {
-    			attr_dev(div, "class", "tag");
-    			add_location(div, file, 6, 2, 89);
-    			attr_dev(a, "href", a_href_value = "tag/" + ctx.tagID);
-    			add_location(a, file, 5, 0, 63);
+    			attr_dev(a, "href", a_href_value = "tag/" + ctx.id);
+    			add_location(a, file, 6, 0, 80);
     		},
 
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
-    			append_dev(a, div);
-    			append_dev(div, t);
+    			a.innerHTML = ctx.badge;
     		},
 
     		p: function update(changed, ctx) {
-    			if (changed.title) {
-    				set_data_dev(t, ctx.title);
+    			if (changed.badge) {
+    				a.innerHTML = ctx.badge;
     			}
 
-    			if ((changed.tagID) && a_href_value !== (a_href_value = "tag/" + ctx.tagID)) {
+    			if ((changed.id) && a_href_value !== (a_href_value = "tag/" + ctx.id)) {
     				attr_dev(a, "href", a_href_value);
     			}
     		},
@@ -1033,51 +1039,64 @@ var app = (function () {
     }
 
     function instance$2($$self, $$props, $$invalidate) {
-    	let { tagID, title } = $$props;
+    	let { id, badge, title } = $$props;
 
-    	const writable_props = ['tagID', 'title'];
+    	const writable_props = ['id', 'badge', 'title'];
     	Object.keys($$props).forEach(key => {
     		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Tag> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$set = $$props => {
-    		if ('tagID' in $$props) $$invalidate('tagID', tagID = $$props.tagID);
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('badge' in $$props) $$invalidate('badge', badge = $$props.badge);
     		if ('title' in $$props) $$invalidate('title', title = $$props.title);
     	};
 
     	$$self.$capture_state = () => {
-    		return { tagID, title };
+    		return { id, badge, title };
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ('tagID' in $$props) $$invalidate('tagID', tagID = $$props.tagID);
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('badge' in $$props) $$invalidate('badge', badge = $$props.badge);
     		if ('title' in $$props) $$invalidate('title', title = $$props.title);
     	};
 
-    	return { tagID, title };
+    	return { id, badge, title };
     }
 
     class Tag extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, ["tagID", "title"]);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, ["id", "badge", "title"]);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Tag", options, id: create_fragment$2.name });
 
     		const { ctx } = this.$$;
     		const props = options.props || {};
-    		if (ctx.tagID === undefined && !('tagID' in props)) {
-    			console.warn("<Tag> was created without expected prop 'tagID'");
+    		if (ctx.id === undefined && !('id' in props)) {
+    			console.warn("<Tag> was created without expected prop 'id'");
+    		}
+    		if (ctx.badge === undefined && !('badge' in props)) {
+    			console.warn("<Tag> was created without expected prop 'badge'");
     		}
     		if (ctx.title === undefined && !('title' in props)) {
     			console.warn("<Tag> was created without expected prop 'title'");
     		}
     	}
 
-    	get tagID() {
+    	get id() {
     		throw new Error("<Tag>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set tagID(value) {
+    	set id(value) {
+    		throw new Error("<Tag>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get badge() {
+    		throw new Error("<Tag>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set badge(value) {
     		throw new Error("<Tag>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -1096,7 +1115,8 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
-    	child_ctx.tag = list[i];
+    	child_ctx.id = list[i][0];
+    	child_ctx.tag = list[i][1];
     	return child_ctx;
     }
 
@@ -1122,7 +1142,7 @@ var app = (function () {
 
     		h: function hydrate() {
     			attr_dev(h2, "class", "title");
-    			add_location(h2, file$1, 29, 2, 634);
+    			add_location(h2, file$1, 29, 2, 627);
     		},
 
     		m: function mount(target, anchor) {
@@ -1147,7 +1167,7 @@ var app = (function () {
     }
 
     // (27:2) {#if logo}
-    function create_if_block_2(ctx) {
+    function create_if_block_1(ctx) {
     	var img;
 
     	const block = {
@@ -1168,7 +1188,7 @@ var app = (function () {
     			attr_dev(img, "class", "title");
     			attr_dev(img, "alt", "logo");
     			attr_dev(img, "src", ctx.logo);
-    			add_location(img, file$1, 27, 2, 575);
+    			add_location(img, file$1, 27, 2, 568);
     		},
 
     		m: function mount(target, anchor) {
@@ -1187,12 +1207,12 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2.name, type: "if", source: "(27:2) {#if logo}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(27:2) {#if logo}", ctx });
     	return block;
     }
 
     // (35:2) {#if github}
-    function create_if_block_1(ctx) {
+    function create_if_block(ctx) {
     	var a, img;
 
     	const block = {
@@ -1217,10 +1237,10 @@ var app = (function () {
     		h: function hydrate() {
     			attr_dev(img, "alt", "GitHub Octocat");
     			attr_dev(img, "src", "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg");
-    			add_location(img, file$1, 35, 33, 883);
+    			add_location(img, file$1, 35, 33, 876);
     			attr_dev(a, "class", "url");
     			attr_dev(a, "href", ctx.github);
-    			add_location(a, file$1, 35, 2, 852);
+    			add_location(a, file$1, 35, 2, 845);
     		},
 
     		m: function mount(target, anchor) {
@@ -1240,11 +1260,11 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(35:2) {#if github}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(35:2) {#if github}", ctx });
     	return block;
     }
 
-    // (44:2) {:else}
+    // (42:2) {:else}
     function create_else_block(ctx) {
     	var p, t;
 
@@ -1266,7 +1286,7 @@ var app = (function () {
 
     		h: function hydrate() {
     			attr_dev(p, "class", "loading");
-    			add_location(p, file$1, 44, 2, 1155);
+    			add_location(p, file$1, 42, 4, 1152);
     		},
 
     		m: function mount(target, anchor) {
@@ -1274,124 +1294,22 @@ var app = (function () {
     			append_dev(p, t);
     		},
 
-    		p: noop,
-    		i: noop,
-    		o: noop,
-
     		d: function destroy(detaching) {
     			if (detaching) {
     				detach_dev(p);
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(44:2) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(42:2) {:else}", ctx });
     	return block;
     }
 
-    // (40:2) {#if tags}
-    function create_if_block(ctx) {
-    	var each_1_anchor, current;
-
-    	let each_value = ctx.tags;
-
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
-    	}
-
-    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-    		each_blocks[i] = null;
-    	});
-
-    	const block = {
-    		c: function create() {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			each_1_anchor = empty();
-    		},
-
-    		l: function claim(nodes) {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].l(nodes);
-    			}
-
-    			each_1_anchor = empty();
-    		},
-
-    		m: function mount(target, anchor) {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
-    			}
-
-    			insert_dev(target, each_1_anchor, anchor);
-    			current = true;
-    		},
-
-    		p: function update(changed, ctx) {
-    			if (changed.tags) {
-    				each_value = ctx.tags;
-
-    				let i;
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(changed, child_ctx);
-    						transition_in(each_blocks[i], 1);
-    					} else {
-    						each_blocks[i] = create_each_block(child_ctx);
-    						each_blocks[i].c();
-    						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-    					}
-    				}
-
-    				group_outros();
-    				for (i = each_value.length; i < each_blocks.length; i += 1) {
-    					out(i);
-    				}
-    				check_outros();
-    			}
-    		},
-
-    		i: function intro(local) {
-    			if (current) return;
-    			for (let i = 0; i < each_value.length; i += 1) {
-    				transition_in(each_blocks[i]);
-    			}
-
-    			current = true;
-    		},
-
-    		o: function outro(local) {
-    			each_blocks = each_blocks.filter(Boolean);
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				transition_out(each_blocks[i]);
-    			}
-
-    			current = false;
-    		},
-
-    		d: function destroy(detaching) {
-    			destroy_each(each_blocks, detaching);
-
-    			if (detaching) {
-    				detach_dev(each_1_anchor);
-    			}
-    		}
-    	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(40:2) {#if tags}", ctx });
-    	return block;
-    }
-
-    // (41:2) {#each tags as tag}
+    // (40:2) {#each Object.entries(tags) as [id, tag]}
     function create_each_block(ctx) {
     	var current;
 
     	var tag_spread_levels = [
+    		{ id: ctx.id },
     		ctx.tag
     	];
 
@@ -1417,7 +1335,8 @@ var app = (function () {
 
     		p: function update(changed, ctx) {
     			var tag_changes = (changed.tags) ? get_spread_update(tag_spread_levels, [
-    									get_spread_object(ctx.tag)
+    									tag_spread_levels[0],
+    			get_spread_object(ctx.tag)
     								]) : {};
     			tag.$set(tag_changes);
     		},
@@ -1438,37 +1357,41 @@ var app = (function () {
     			destroy_component(tag, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(41:2) {#each tags as tag}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(40:2) {#each Object.entries(tags) as [id, tag]}", ctx });
     	return block;
     }
 
     function create_fragment$3(ctx) {
-    	var div1, p0, t0, t1, t2, time, t3, t4, t5, img, t6, p1, t7, t8, a, t9, a_href_value, t10, t11, p2, t12, div0, current_block_type_index, if_block2, current;
+    	var div1, p0, t0, t1, t2, time, t3, t4, t5, img, t6, p1, t7, t8, a, t9, a_href_value, t10, t11, p2, t12, div0, current;
 
     	function select_block_type(changed, ctx) {
-    		if (ctx.logo) return create_if_block_2;
+    		if (ctx.logo) return create_if_block_1;
     		return create_else_block_1;
     	}
 
     	var current_block_type = select_block_type(null, ctx);
     	var if_block0 = current_block_type(ctx);
 
-    	var if_block1 = (ctx.github) && create_if_block_1(ctx);
+    	var if_block1 = (ctx.github) && create_if_block(ctx);
 
-    	var if_block_creators = [
-    		create_if_block,
-    		create_else_block
-    	];
+    	let each_value = Object.entries(ctx.tags);
 
-    	var if_blocks = [];
+    	let each_blocks = [];
 
-    	function select_block_type_1(changed, ctx) {
-    		if (ctx.tags) return 0;
-    		return 1;
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
-    	current_block_type_index = select_block_type_1(null, ctx);
-    	if_block2 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	let each_1_else = null;
+
+    	if (!each_value.length) {
+    		each_1_else = create_else_block(ctx);
+    		each_1_else.c();
+    	}
 
     	const block = {
     		c: function create() {
@@ -1495,7 +1418,10 @@ var app = (function () {
     			p2 = element("p");
     			t12 = space();
     			div0 = element("div");
-    			if_block2.c();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
     			this.h();
     		},
 
@@ -1551,7 +1477,10 @@ var app = (function () {
     			div0 = claim_element(div1_nodes, "DIV", { class: true }, false);
     			var div0_nodes = children(div0);
 
-    			if_block2.l(div0_nodes);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].l(div0_nodes);
+    			}
+
     			div0_nodes.forEach(detach_dev);
     			div1_nodes.forEach(detach_dev);
     			this.h();
@@ -1559,24 +1488,24 @@ var app = (function () {
 
     		h: function hydrate() {
     			attr_dev(time, "datetime", "2018/02/24");
-    			add_location(time, file$1, 25, 37, 512);
+    			add_location(time, file$1, 25, 37, 505);
     			attr_dev(p0, "class", "date");
-    			add_location(p0, file$1, 25, 2, 477);
+    			add_location(p0, file$1, 25, 2, 470);
     			attr_dev(img, "class", "preview");
     			attr_dev(img, "alt", "preview");
     			attr_dev(img, "src", ctx.preview);
-    			add_location(img, file$1, 31, 2, 677);
+    			add_location(img, file$1, 31, 2, 670);
     			attr_dev(p1, "class", "description");
-    			add_location(p1, file$1, 32, 2, 732);
+    			add_location(p1, file$1, 32, 2, 725);
     			attr_dev(a, "href", a_href_value = "project/" + ctx.title);
     			attr_dev(a, "class", "readmore");
-    			add_location(a, file$1, 33, 2, 776);
+    			add_location(a, file$1, 33, 2, 769);
     			attr_dev(p2, "class", "caption");
-    			add_location(p2, file$1, 37, 2, 1010);
+    			add_location(p2, file$1, 37, 2, 1003);
     			attr_dev(div0, "class", "tags");
-    			add_location(div0, file$1, 38, 2, 1052);
+    			add_location(div0, file$1, 38, 2, 1045);
     			attr_dev(div1, "class", "project");
-    			add_location(div1, file$1, 24, 0, 452);
+    			add_location(div1, file$1, 24, 0, 445);
     		},
 
     		m: function mount(target, anchor) {
@@ -1604,7 +1533,15 @@ var app = (function () {
     			p2.innerHTML = ctx.caption;
     			append_dev(div1, t12);
     			append_dev(div1, div0);
-    			if_blocks[current_block_type_index].m(div0, null);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div0, null);
+    			}
+
+    			if (each_1_else) {
+    				each_1_else.m(div0, null);
+    			}
+
     			current = true;
     		},
 
@@ -1644,7 +1581,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(changed, ctx);
     				} else {
-    					if_block1 = create_if_block_1(ctx);
+    					if_block1 = create_if_block(ctx);
     					if_block1.c();
     					if_block1.m(div1, t11);
     				}
@@ -1657,35 +1594,58 @@ var app = (function () {
     				p2.innerHTML = ctx.caption;
     			}
 
-    			var previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_1(changed, ctx);
-    			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(changed, ctx);
-    			} else {
-    				group_outros();
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
-    				check_outros();
+    			if (changed.tags) {
+    				each_value = Object.entries(ctx.tags);
 
-    				if_block2 = if_blocks[current_block_type_index];
-    				if (!if_block2) {
-    					if_block2 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block2.c();
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div0, null);
+    					}
     				}
-    				transition_in(if_block2, 1);
-    				if_block2.m(div0, null);
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if (each_value.length) {
+    				if (each_1_else) {
+    					each_1_else.d(1);
+    					each_1_else = null;
+    				}
+    			} else if (!each_1_else) {
+    				each_1_else = create_else_block(ctx);
+    				each_1_else.c();
+    				each_1_else.m(div0, null);
     			}
     		},
 
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block2);
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
     			current = true;
     		},
 
     		o: function outro(local) {
-    			transition_out(if_block2);
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
     			current = false;
     		},
 
@@ -1696,7 +1656,10 @@ var app = (function () {
 
     			if_block0.d();
     			if (if_block1) if_block1.d();
-    			if_blocks[current_block_type_index].d();
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (each_1_else) each_1_else.d();
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$3.name, type: "component", source: "", ctx });
@@ -1706,7 +1669,7 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { id, age, caption, date, description, github, logo, preview, title } = $$props;
 
-      let tags;
+      let tags = {};
 
       onMount(async function() {
         $$invalidate('tags', tags = await getTagsByResourceID(id));
