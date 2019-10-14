@@ -502,7 +502,7 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { title, component, path, props = [] } = $$props;
 
-      addRoute(title, component, path, props);
+      addRoute(title, component, path.toLowerCase(), props);
 
     	const writable_props = ['title', 'component', 'path', 'props'];
     	Object.keys($$props).forEach(key => {
@@ -689,7 +689,7 @@ var app = (function () {
       let component = defaultComponent;
       let props = defaultProps;
       routes.subscribe(value => {
-    		const route = value[document.location.pathname];
+    		const route = value[document.location.pathname.toLowerCase()];
         document.title = (route) ? route.title : defaultTitle;
         $$invalidate('component', component =  (route) ? route.component : defaultComponent);
         $$invalidate('props', props = (route) ? route.props : defaultProps);
@@ -956,7 +956,7 @@ var app = (function () {
         return Tagable;
     }());
     exports.Tagable = Tagable;
-
+    //# sourceMappingURL=Tagable.js.map
     });
 
     unwrapExports(Tagable_1);
@@ -1142,7 +1142,7 @@ var app = (function () {
 
     		h: function hydrate() {
     			attr_dev(h2, "class", "title");
-    			add_location(h2, file$1, 29, 2, 627);
+    			add_location(h2, file$1, 29, 2, 623);
     		},
 
     		m: function mount(target, anchor) {
@@ -1167,7 +1167,7 @@ var app = (function () {
     }
 
     // (27:2) {#if logo}
-    function create_if_block_1(ctx) {
+    function create_if_block_2(ctx) {
     	var img;
 
     	const block = {
@@ -1188,7 +1188,7 @@ var app = (function () {
     			attr_dev(img, "class", "title");
     			attr_dev(img, "alt", "logo");
     			attr_dev(img, "src", ctx.logo);
-    			add_location(img, file$1, 27, 2, 568);
+    			add_location(img, file$1, 27, 2, 564);
     		},
 
     		m: function mount(target, anchor) {
@@ -1207,12 +1207,12 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(27:2) {#if logo}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2.name, type: "if", source: "(27:2) {#if logo}", ctx });
     	return block;
     }
 
     // (35:2) {#if github}
-    function create_if_block(ctx) {
+    function create_if_block_1(ctx) {
     	var a, img;
 
     	const block = {
@@ -1237,10 +1237,10 @@ var app = (function () {
     		h: function hydrate() {
     			attr_dev(img, "alt", "GitHub Octocat");
     			attr_dev(img, "src", "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg");
-    			add_location(img, file$1, 35, 33, 876);
+    			add_location(img, file$1, 35, 33, 875);
     			attr_dev(a, "class", "url");
     			attr_dev(a, "href", ctx.github);
-    			add_location(a, file$1, 35, 2, 845);
+    			add_location(a, file$1, 35, 2, 844);
     		},
 
     		m: function mount(target, anchor) {
@@ -1260,18 +1260,17 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(35:2) {#if github}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(35:2) {#if github}", ctx });
     	return block;
     }
 
-    // (42:2) {:else}
-    function create_else_block(ctx) {
-    	var p, t;
+    // (38:2) {#if caption}
+    function create_if_block(ctx) {
+    	var p;
 
     	const block = {
     		c: function create() {
     			p = element("p");
-    			t = text("Loading tags");
     			this.h();
     		},
 
@@ -1279,14 +1278,59 @@ var app = (function () {
     			p = claim_element(nodes, "P", { class: true }, false);
     			var p_nodes = children(p);
 
-    			t = claim_text(p_nodes, "Loading tags");
+    			p_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+
+    		h: function hydrate() {
+    			attr_dev(p, "class", "caption");
+    			add_location(p, file$1, 38, 2, 1019);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			p.innerHTML = ctx.caption;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.caption) {
+    				p.innerHTML = ctx.caption;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(p);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(38:2) {#if caption}", ctx });
+    	return block;
+    }
+
+    // (44:2) {:else}
+    function create_else_block(ctx) {
+    	var p, t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text("Loading tags...");
+    			this.h();
+    		},
+
+    		l: function claim(nodes) {
+    			p = claim_element(nodes, "P", { class: true }, false);
+    			var p_nodes = children(p);
+
+    			t = claim_text(p_nodes, "Loading tags...");
     			p_nodes.forEach(detach_dev);
     			this.h();
     		},
 
     		h: function hydrate() {
     			attr_dev(p, "class", "loading");
-    			add_location(p, file$1, 42, 4, 1152);
+    			add_location(p, file$1, 44, 4, 1177);
     		},
 
     		m: function mount(target, anchor) {
@@ -1300,11 +1344,11 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(42:2) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(44:2) {:else}", ctx });
     	return block;
     }
 
-    // (40:2) {#each Object.entries(tags) as [id, tag]}
+    // (42:2) {#each Object.entries(tags) as [id, tag]}
     function create_each_block(ctx) {
     	var current;
 
@@ -1357,22 +1401,24 @@ var app = (function () {
     			destroy_component(tag, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(40:2) {#each Object.entries(tags) as [id, tag]}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(42:2) {#each Object.entries(tags) as [id, tag]}", ctx });
     	return block;
     }
 
     function create_fragment$3(ctx) {
-    	var div1, p0, t0, t1, t2, time, t3, t4, t5, img, t6, p1, t7, t8, a, t9, a_href_value, t10, t11, p2, t12, div0, current;
+    	var div1, p0, t0, t1, t2, time, t3, t4, t5, img, t6, p1, t7, a, t8, a_href_value, t9, t10, t11, div0, current;
 
     	function select_block_type(changed, ctx) {
-    		if (ctx.logo) return create_if_block_1;
+    		if (ctx.logo) return create_if_block_2;
     		return create_else_block_1;
     	}
 
     	var current_block_type = select_block_type(null, ctx);
     	var if_block0 = current_block_type(ctx);
 
-    	var if_block1 = (ctx.github) && create_if_block(ctx);
+    	var if_block1 = (ctx.github) && create_if_block_1(ctx);
+
+    	var if_block2 = (ctx.caption) && create_if_block(ctx);
 
     	let each_value = Object.entries(ctx.tags);
 
@@ -1408,15 +1454,14 @@ var app = (function () {
     			img = element("img");
     			t6 = space();
     			p1 = element("p");
-    			t7 = text(ctx.description);
-    			t8 = space();
+    			t7 = space();
     			a = element("a");
-    			t9 = text("Read more");
-    			t10 = space();
+    			t8 = text("Read more");
+    			t9 = space();
     			if (if_block1) if_block1.c();
+    			t10 = space();
+    			if (if_block2) if_block2.c();
     			t11 = space();
-    			p2 = element("p");
-    			t12 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1455,24 +1500,19 @@ var app = (function () {
     			p1 = claim_element(div1_nodes, "P", { class: true }, false);
     			var p1_nodes = children(p1);
 
-    			t7 = claim_text(p1_nodes, ctx.description);
     			p1_nodes.forEach(detach_dev);
-    			t8 = claim_space(div1_nodes);
+    			t7 = claim_space(div1_nodes);
 
     			a = claim_element(div1_nodes, "A", { href: true, class: true }, false);
     			var a_nodes = children(a);
 
-    			t9 = claim_text(a_nodes, "Read more");
+    			t8 = claim_text(a_nodes, "Read more");
     			a_nodes.forEach(detach_dev);
-    			t10 = claim_space(div1_nodes);
+    			t9 = claim_space(div1_nodes);
     			if (if_block1) if_block1.l(div1_nodes);
+    			t10 = claim_space(div1_nodes);
+    			if (if_block2) if_block2.l(div1_nodes);
     			t11 = claim_space(div1_nodes);
-
-    			p2 = claim_element(div1_nodes, "P", { class: true }, false);
-    			var p2_nodes = children(p2);
-
-    			p2_nodes.forEach(detach_dev);
-    			t12 = claim_space(div1_nodes);
 
     			div0 = claim_element(div1_nodes, "DIV", { class: true }, false);
     			var div0_nodes = children(div0);
@@ -1487,23 +1527,21 @@ var app = (function () {
     		},
 
     		h: function hydrate() {
-    			attr_dev(time, "datetime", "2018/02/24");
+    			attr_dev(time, "datetime", ctx.date);
     			add_location(time, file$1, 25, 37, 505);
     			attr_dev(p0, "class", "date");
     			add_location(p0, file$1, 25, 2, 470);
     			attr_dev(img, "class", "preview");
     			attr_dev(img, "alt", "preview");
     			attr_dev(img, "src", ctx.preview);
-    			add_location(img, file$1, 31, 2, 670);
+    			add_location(img, file$1, 31, 2, 666);
     			attr_dev(p1, "class", "description");
-    			add_location(p1, file$1, 32, 2, 725);
-    			attr_dev(a, "href", a_href_value = "project/" + ctx.title);
+    			add_location(p1, file$1, 32, 2, 721);
+    			attr_dev(a, "href", a_href_value = "project/" + ctx.id);
     			attr_dev(a, "class", "readmore");
-    			add_location(a, file$1, 33, 2, 769);
-    			attr_dev(p2, "class", "caption");
-    			add_location(p2, file$1, 37, 2, 1003);
+    			add_location(a, file$1, 33, 2, 771);
     			attr_dev(div0, "class", "tags");
-    			add_location(div0, file$1, 38, 2, 1045);
+    			add_location(div0, file$1, 40, 2, 1070);
     			attr_dev(div1, "class", "project");
     			add_location(div1, file$1, 24, 0, 445);
     		},
@@ -1522,16 +1560,15 @@ var app = (function () {
     			append_dev(div1, img);
     			append_dev(div1, t6);
     			append_dev(div1, p1);
-    			append_dev(p1, t7);
-    			append_dev(div1, t8);
+    			p1.innerHTML = ctx.description;
+    			append_dev(div1, t7);
     			append_dev(div1, a);
-    			append_dev(a, t9);
-    			append_dev(div1, t10);
+    			append_dev(a, t8);
+    			append_dev(div1, t9);
     			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t10);
+    			if (if_block2) if_block2.m(div1, null);
     			append_dev(div1, t11);
-    			append_dev(div1, p2);
-    			p2.innerHTML = ctx.caption;
-    			append_dev(div1, t12);
     			append_dev(div1, div0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1552,6 +1589,7 @@ var app = (function () {
 
     			if (!current || changed.date) {
     				set_data_dev(t3, ctx.date);
+    				attr_dev(time, "datetime", ctx.date);
     			}
 
     			if (current_block_type === (current_block_type = select_block_type(changed, ctx)) && if_block0) {
@@ -1570,10 +1608,10 @@ var app = (function () {
     			}
 
     			if (!current || changed.description) {
-    				set_data_dev(t7, ctx.description);
+    				p1.innerHTML = ctx.description;
     			}
 
-    			if ((!current || changed.title) && a_href_value !== (a_href_value = "project/" + ctx.title)) {
+    			if ((!current || changed.id) && a_href_value !== (a_href_value = "project/" + ctx.id)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
@@ -1581,17 +1619,26 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(changed, ctx);
     				} else {
-    					if_block1 = create_if_block(ctx);
+    					if_block1 = create_if_block_1(ctx);
     					if_block1.c();
-    					if_block1.m(div1, t11);
+    					if_block1.m(div1, t10);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
     				if_block1 = null;
     			}
 
-    			if (!current || changed.caption) {
-    				p2.innerHTML = ctx.caption;
+    			if (ctx.caption) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    				} else {
+    					if_block2 = create_if_block(ctx);
+    					if_block2.c();
+    					if_block2.m(div1, t11);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
     			}
 
     			if (changed.tags) {
@@ -1656,6 +1703,7 @@ var app = (function () {
 
     			if_block0.d();
     			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
 
     			destroy_each(each_blocks, detaching);
 
@@ -2178,7 +2226,7 @@ var app = (function () {
     		},
 
     		h: function hydrate() {
-    			add_location(h1, file$3, 5, 0, 64);
+    			add_location(h1, file$3, 13, 0, 226);
     			html_tag = new HtmlTag(ctx.body, null);
     		},
 
@@ -2215,51 +2263,110 @@ var app = (function () {
     }
 
     function instance$5($$self, $$props, $$invalidate) {
-    	let { title, body } = $$props;
+    	let { id, age, body, caption, date, description, github, logo, preview, title } = $$props;
 
-    	const writable_props = ['title', 'body'];
+    	const writable_props = ['id', 'age', 'body', 'caption', 'date', 'description', 'github', 'logo', 'preview', 'title'];
     	Object.keys($$props).forEach(key => {
     		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Project> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$set = $$props => {
-    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('age' in $$props) $$invalidate('age', age = $$props.age);
     		if ('body' in $$props) $$invalidate('body', body = $$props.body);
+    		if ('caption' in $$props) $$invalidate('caption', caption = $$props.caption);
+    		if ('date' in $$props) $$invalidate('date', date = $$props.date);
+    		if ('description' in $$props) $$invalidate('description', description = $$props.description);
+    		if ('github' in $$props) $$invalidate('github', github = $$props.github);
+    		if ('logo' in $$props) $$invalidate('logo', logo = $$props.logo);
+    		if ('preview' in $$props) $$invalidate('preview', preview = $$props.preview);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
     	};
 
     	$$self.$capture_state = () => {
-    		return { title, body };
+    		return { id, age, body, caption, date, description, github, logo, preview, title };
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('id' in $$props) $$invalidate('id', id = $$props.id);
+    		if ('age' in $$props) $$invalidate('age', age = $$props.age);
     		if ('body' in $$props) $$invalidate('body', body = $$props.body);
+    		if ('caption' in $$props) $$invalidate('caption', caption = $$props.caption);
+    		if ('date' in $$props) $$invalidate('date', date = $$props.date);
+    		if ('description' in $$props) $$invalidate('description', description = $$props.description);
+    		if ('github' in $$props) $$invalidate('github', github = $$props.github);
+    		if ('logo' in $$props) $$invalidate('logo', logo = $$props.logo);
+    		if ('preview' in $$props) $$invalidate('preview', preview = $$props.preview);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
     	};
 
-    	return { title, body };
+    	return {
+    		id,
+    		age,
+    		body,
+    		caption,
+    		date,
+    		description,
+    		github,
+    		logo,
+    		preview,
+    		title
+    	};
     }
 
     class Project$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$6, safe_not_equal, ["title", "body"]);
+    		init(this, options, instance$5, create_fragment$6, safe_not_equal, ["id", "age", "body", "caption", "date", "description", "github", "logo", "preview", "title"]);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Project", options, id: create_fragment$6.name });
 
     		const { ctx } = this.$$;
     		const props = options.props || {};
-    		if (ctx.title === undefined && !('title' in props)) {
-    			console.warn("<Project> was created without expected prop 'title'");
+    		if (ctx.id === undefined && !('id' in props)) {
+    			console.warn("<Project> was created without expected prop 'id'");
+    		}
+    		if (ctx.age === undefined && !('age' in props)) {
+    			console.warn("<Project> was created without expected prop 'age'");
     		}
     		if (ctx.body === undefined && !('body' in props)) {
     			console.warn("<Project> was created without expected prop 'body'");
     		}
+    		if (ctx.caption === undefined && !('caption' in props)) {
+    			console.warn("<Project> was created without expected prop 'caption'");
+    		}
+    		if (ctx.date === undefined && !('date' in props)) {
+    			console.warn("<Project> was created without expected prop 'date'");
+    		}
+    		if (ctx.description === undefined && !('description' in props)) {
+    			console.warn("<Project> was created without expected prop 'description'");
+    		}
+    		if (ctx.github === undefined && !('github' in props)) {
+    			console.warn("<Project> was created without expected prop 'github'");
+    		}
+    		if (ctx.logo === undefined && !('logo' in props)) {
+    			console.warn("<Project> was created without expected prop 'logo'");
+    		}
+    		if (ctx.preview === undefined && !('preview' in props)) {
+    			console.warn("<Project> was created without expected prop 'preview'");
+    		}
+    		if (ctx.title === undefined && !('title' in props)) {
+    			console.warn("<Project> was created without expected prop 'title'");
+    		}
     	}
 
-    	get title() {
+    	get id() {
     		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set title(value) {
+    	set id(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get age() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set age(value) {
     		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -2270,26 +2377,83 @@ var app = (function () {
     	set body(value) {
     		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get caption() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set caption(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get date() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set date(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get description() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set description(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get github() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set github(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get logo() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set logo(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get preview() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set preview(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Project>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Project>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\routes\Project\routes.svelte generated by Svelte v3.12.1 */
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
-    	child_ctx.project = list[i];
+    	child_ctx.id = list[i][0];
+    	child_ctx.data = list[i][1];
     	return child_ctx;
     }
 
-    // (15:0) {#each resources as project}
+    // (15:0) {#each Object.entries(projects) as [id, data]}
     function create_each_block$2(ctx) {
     	var current;
 
     	var route = new Route({
     		props: {
-    		title: ctx.project.data.title,
-    		path: "/project/" + ctx.project.data.title,
+    		title: "Jonathan Marsh - Project - " + ctx.data.title,
+    		path: "/project/" + ctx.id,
     		component: Project$1,
-    		props: ctx.project.data
+    		props: ctx.data
     	},
     		$$inline: true
     	});
@@ -2310,9 +2474,9 @@ var app = (function () {
 
     		p: function update(changed, ctx) {
     			var route_changes = {};
-    			if (changed.resources) route_changes.title = ctx.project.data.title;
-    			if (changed.resources) route_changes.path = "/project/" + ctx.project.data.title;
-    			if (changed.resources) route_changes.props = ctx.project.data;
+    			if (changed.projects) route_changes.title = "Jonathan Marsh - Project - " + ctx.data.title;
+    			if (changed.projects) route_changes.path = "/project/" + ctx.id;
+    			if (changed.projects) route_changes.props = ctx.data;
     			route.$set(route_changes);
     		},
 
@@ -2332,14 +2496,14 @@ var app = (function () {
     			destroy_component(route, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$2.name, type: "each", source: "(15:0) {#each resources as project}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$2.name, type: "each", source: "(15:0) {#each Object.entries(projects) as [id, data]}", ctx });
     	return block;
     }
 
     function create_fragment$7(ctx) {
     	var each_1_anchor, current;
 
-    	let each_value = ctx.resources;
+    	let each_value = Object.entries(ctx.projects);
 
     	let each_blocks = [];
 
@@ -2378,8 +2542,8 @@ var app = (function () {
     		},
 
     		p: function update(changed, ctx) {
-    			if (changed.resources || changed.Project) {
-    				each_value = ctx.resources;
+    			if (changed.projects || changed.Project) {
+    				each_value = Object.entries(ctx.projects);
 
     				let i;
     				for (i = 0; i < each_value.length; i += 1) {
@@ -2437,9 +2601,9 @@ var app = (function () {
     function instance$6($$self, $$props, $$invalidate) {
     	
 
-    let resources = [];
+    let projects = {};
     onMount(async () => {
-      $$invalidate('resources', resources = await getResources());
+      $$invalidate('projects', projects = await getResources());
     });
 
     	$$self.$capture_state = () => {
@@ -2447,10 +2611,10 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ('resources' in $$props) $$invalidate('resources', resources = $$props.resources);
+    		if ('projects' in $$props) $$invalidate('projects', projects = $$props.projects);
     	};
 
-    	return { resources };
+    	return { projects };
     }
 
     class Routes extends SvelteComponentDev {
@@ -2585,20 +2749,21 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
-    	child_ctx.tag = list[i];
+    	child_ctx.id = list[i][0];
+    	child_ctx.data = list[i][1];
     	return child_ctx;
     }
 
-    // (16:0) {#each tags as tag}
+    // (16:0) {#each Object.entries(tags) as [id, data]}
     function create_each_block$3(ctx) {
     	var current;
 
     	var route = new Route({
     		props: {
-    		title: ctx.tag.id,
-    		path: "/tag/" + ctx.tag.id,
+    		title: "Jonathan Marsh - Tag - " + ctx.data.title,
+    		path: "/tag/" + ctx.id,
     		component: Tag$1,
-    		props: ctx.tag.data
+    		props: ctx.data
     	},
     		$$inline: true
     	});
@@ -2619,9 +2784,9 @@ var app = (function () {
 
     		p: function update(changed, ctx) {
     			var route_changes = {};
-    			if (changed.tags) route_changes.title = ctx.tag.id;
-    			if (changed.tags) route_changes.path = "/tag/" + ctx.tag.id;
-    			if (changed.tags) route_changes.props = ctx.tag.data;
+    			if (changed.tags) route_changes.title = "Jonathan Marsh - Tag - " + ctx.data.title;
+    			if (changed.tags) route_changes.path = "/tag/" + ctx.id;
+    			if (changed.tags) route_changes.props = ctx.data;
     			route.$set(route_changes);
     		},
 
@@ -2641,14 +2806,14 @@ var app = (function () {
     			destroy_component(route, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$3.name, type: "each", source: "(16:0) {#each tags as tag}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$3.name, type: "each", source: "(16:0) {#each Object.entries(tags) as [id, data]}", ctx });
     	return block;
     }
 
     function create_fragment$9(ctx) {
     	var each_1_anchor, current;
 
-    	let each_value = ctx.tags;
+    	let each_value = Object.entries(ctx.tags);
 
     	let each_blocks = [];
 
@@ -2688,7 +2853,7 @@ var app = (function () {
 
     		p: function update(changed, ctx) {
     			if (changed.tags || changed.Tag) {
-    				each_value = ctx.tags;
+    				each_value = Object.entries(ctx.tags);
 
     				let i;
     				for (i = 0; i < each_value.length; i += 1) {
@@ -2746,7 +2911,7 @@ var app = (function () {
     function instance$8($$self, $$props, $$invalidate) {
     	
 
-    let tags = [];
+    let tags = {};
     onMount(async () => {
       $$invalidate('tags', tags = await getTags());
     });

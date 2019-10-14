@@ -6,12 +6,12 @@ import Route from '../../components/Route.svelte'
 import Project from './Project.svelte'
 import { getResources } from '../../data/tagable.js'
 
-let resources = []
+let projects = {}
 onMount(async () => {
-  resources = await getResources()
+  projects = await getResources()
 })
 </script>
 
-{#each resources as project}
-<Route title={project.data.title} path="/project/{project.data.title}" component={Project} props={project.data}/>
+{#each Object.entries(projects) as [id, data]}
+<Route title="Jonathan Marsh - Project - {data.title}" path="/project/{id}" component={Project} props={data}/>
 {/each}
