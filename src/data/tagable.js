@@ -25,9 +25,3 @@ export async function getResources() {
 export async function getTags(){
   return imported.then(() => tagable.tags)
 }
-
-export async function getTagByID(tagid){
-  return imported.then(() => {
-    return tagable.tags[tagid]
-  })
-}

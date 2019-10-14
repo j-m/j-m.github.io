@@ -10,7 +10,7 @@
   let component = defaultComponent
   let props = defaultProps
   routes.subscribe(value => {
-		const route = value[document.location.pathname]
+		const route = value[document.location.pathname.toLowerCase()]
     document.title = (route) ? route.title : defaultTitle
     component =  (route) ? route.component : defaultComponent
     props = (route) ? route.props : defaultProps

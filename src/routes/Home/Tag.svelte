@@ -1,8 +1,9 @@
 <script>
-  export let tagID
+  export let id
+  export let badge
   export let title
 </script>
 
-<a href="tag/{tagID}">
-  <div class="tag">{title}</div>
+<a href="tag/{id}">
+  {@html badge}
 </a>
