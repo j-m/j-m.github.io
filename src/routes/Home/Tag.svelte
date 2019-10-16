@@ -4,6 +4,6 @@
   export let title
 </script>
 
-<a href="tag/{id}">
+<a title="View everything tagged '{title}''" href="tag/{id}">
   {@html badge}
 </a>
