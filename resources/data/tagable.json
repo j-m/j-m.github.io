@@ -82,13 +82,13 @@
     "title": "Jon Hash" 
   }, 
   "jonmarsh.dev": {
-    "caption": "",
+    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/jonmarsh.dev'>",
     "date": "2019-06-04",
     "description": "This website! Completely redesigned and overhauled to use Svelte 3.",
     "links": [
       { "href": "https://github.com/j-m/jonmarsh.dev", "title": "View the source code for this project", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
     "logo": "",
-    "preview": "./resources/images/me-square.png",
+    "preview": "./resources/images/favicon/android-chrome-512x512.png",
     "title": "jonmarsh.dev"
   },
   "Oaty": {
@@ -130,7 +130,7 @@
     "links": [
       { "href": "project/pulfrichbird", "title": "Read more about Pulfrich Bird", "image":{ "alt": "Read more icon", "src": "resources/images/icons/read-more.svg" } },
       { "href": "demo/pulfrich", "title": "Play Pulfrich Bird", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } },
-      { "href": "https://github.com/j-m/pulfrich-bird/index.html", "title": "View the source code for Pulfrich Bird", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" }}],
+      { "href": "https://github.com/j-m/pulfrich-bird/", "title": "View the source code for Pulfrich Bird", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" }}],
     "logo": "./resources/images/logos/pulfrich-bird.png",
     "preview": "./resources/images/previews/pulfrich-bird.png",
     "title": "PulfrichBird"
@@ -192,14 +192,7 @@
     "date": "2012-10-01",
     "description": "My first 2D platformer. The levels are difficult, and the poor performance and control make it hard, but it is possible! Good luck... (It says at the end of the first level, but might not make it that far: press 'q' when near the flag to end the level)",
     "links": [
-      { "href": "demo/the_adventure/index.html",
-        "title": "Play Adventure",
-        "image":{
-          "alt": "Play icon",
-          "src": "resources/images/icons/play.svg"
-        }
-      }
-    ],
+      { "href": "demo/the_adventure/index.html", "title": "Play Adventure", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } }],
     "logo": "",
     "preview": "./resources/images/previews/adventure.png",
     "title": "Adventure"
@@ -208,6 +201,8 @@
     "caption": "",
     "date": "2012-08-27",
     "description": "My first 2D sidescroller. The collision detection is awful, but there's a colour option in settings to make up for it.",
+    "links": [
+      { "href": "demo/rocket/index.html", "title": "Play Asteroid Run", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } }],
     "logo": "",
     "preview": "./resources/images/previews/asteroid-run.png",
     "title": "Asteroid Run"
