@@ -1,5 +1,4 @@
 #projects {
-  grid-area: projects;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
