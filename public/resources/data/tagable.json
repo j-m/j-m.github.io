@@ -13,6 +13,7 @@
   "Hackaton":{"data":{"title": "Hackaton"}},
   "JavaScript":{"parent": "ProgrammingLanguage","data":{"title": "JavaScript"}},
   "Mongo":{"data":{"title": "Mongo"}},
+  "NPM":{"data":{"title": "NPM", "description": "Node Package Manager. These are the NPM projects that I have contributed to or publish myself."}},
   "ProgrammingLanguage":{"children":["ActionScript2","C","Csharp","C++","Delphi","JavaScript","TypeScript"],"data":{"title": "Programming Language", "description": "The children of this tag are the various programming languages I have used over the years."}},
   "ReactNative":{"data":{"title": "ReactNative"}},
   "REST":{"parent": "API","data":{"title": "REST"}},
@@ -22,6 +23,7 @@
   "Winner":{"data":{"title": "Winner", "description": "This project recieved an award at a hackathon."}}
 },
 "tagged":[
+  {"resourceID":"tagable","tagID":"NPM"},
   {"resourceID":"210CT","tagID":"C++"},
   {"resourceID":"TourOfBritain","tagID":"Mongo"},
   {"resourceID":"TourOfBritain","tagID":"Angular"},
@@ -54,6 +56,16 @@
   {"resourceID":"Maze","tagID":"C#"}
 ],
 "resources":{
+  "tagable": {
+    "caption": "<img alt='GitHub commit activity' src='https://badgen.net/github/last-commit/j-m/tagable'/>",
+    "date": "",
+    "description": "A simple platform to tag abstracted resources with a heiracy structure.",
+    "links": [
+      { "href": "https://github.com/j-m/tagable", "title": "View the source code for Tagable", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "logo": "./resources/images/logos/tagable.png",
+    "preview": "",
+    "title": "Tagable"
+  },
   "210CT": {
     "caption": "Private Repository",
     "date": "",
