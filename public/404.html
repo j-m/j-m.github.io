@@ -2,33 +2,42 @@
 <html>
 
 <head>
-  <base href="https://www.jonmarsh.dev/">
+  <script>
+    document.write(`<base href="${document.location.origin}/">`)
+  </script>
+
   <title>Jonathan Marsh - Home</title>
   <meta charset="utf-8">
   <meta name="author" content="Jonathan Marsh">
   <meta name="description" content="All about Jonathan Marsh">
   <meta name="keywords" content="Software Engineer,Computer Scientist">
-  <meta name="language" content="english"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel='icon' type='image/png' href='favicon.png'>
-	<link type="text/css" rel="stylesheet" href="resources/css/index.css"/>
-  <link type="text/css" rel="stylesheet" href="resources/css/about.css"/>
-  <link type="text/css" rel="stylesheet" href="resources/css/filter.css"/>
-  <link type="text/css" rel="stylesheet" href="resources/css/projects.css"/>
+  <meta name="language" content="english">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<script defer src='bundle.js'></script>
+  <link rel='icon' type='image/png' href='favicon.ico'>
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link type="text/css" rel="stylesheet" href="resources/css/index.css" />
+  <link type="text/css" rel="stylesheet" href="resources/css/about.css" />
+  <link type="text/css" rel="stylesheet" href="resources/css/filter.css" />
+  <link type="text/css" rel="stylesheet" href="resources/css/projects.css" />
+
+  <script defer src='bundle.js'></script>
 </head>
 
 <body>
   <div id="about">
-    <img id="picture" src="resources/images/me-square.png"/>
-    <div id="social">
-      <a href="https://github.com/j-m"><img id="github" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
-      <a href="https://stackoverflow.com/users/4907552"><img height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg"/></a>
-      <a href="https://www.linkedin.com/in/jonrmarsh/"><img height="50" id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"/></a>
-      <a href="https://www.hackerrank.com/jaunt"><img height="50" id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg"/></a>
-    </div>
+    <img id="picture" src="resources/images/me-square.png" />
     <p id="name">Jonathan Marsh</p>
+    <div id="social">
+      <a href="https://github.com/j-m"><img id="github" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" /></a>
+      <a href="https://stackoverflow.com/users/4907552"><img height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" /></a>
+      <a href="https://www.linkedin.com/in/jonrmarsh/"><img height="50" id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" /></a>
+      <a href="https://www.hackerrank.com/jaunt"><img height="50" id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg" /></a>
+    </div>
     <ul id="info">
       <li>🎓 Computer Science</li>
       <li>🏡 Cambridge, UK</li>
@@ -37,12 +46,10 @@
       <li>🏎 Leclerc > Hamilton</li>
       <li>🍕 is life. </p>
     </ul>
+    <p id="links"><a href="/">Home</a> | <a href="sitemap">Site Map</a> | <a href="privacy">Privacy Policy</a> </p>
+    <p id="copy">&copy; Copyright 2019 Jonathan Marsh. <br/> All rights reserved</p>
   </div>
-  <app></app>
+  <div id="content"><app></app></div>
 </body>
-<footer>
-  <hr/>
-  <p>&copy; Copyright 2019 Jonathan Marsh | <a href="sitemap">Site Map</a> | <a href="privacy">Privacy Policy</a> </p>
-</footer>
-</html>
 
+</html>

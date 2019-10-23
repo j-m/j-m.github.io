@@ -1,45 +1,53 @@
 <script>
-  export let logo;
-  export let title;
-  export let description;
-  export let github;
-  export let caption;
-  export let preview;
-  export let date;
+  export let id
+  export let caption
+  export let date
+  export let description
+  export let github
+  export let logo
+  export let preview
+  export let title
+  export let links = []
 
-  import { onMount } from 'svelte';
-  import { getTags } from '../../data/tagable.js';
+  let age = new Date(new Date(date) - new Date("1997-10-24")).getFullYear() - 1970
 
-  import Tag from './Tag.svelte';
+  import { onMount } from 'svelte'
+  import { getTagsByResourceID } from '../../data/tagable.js'
 
-  let tags;
+  import Tag from './Tag.svelte'
+
+  let tags = {}
 
   onMount(async function() {
-    tags = await getTags(title);
-  });
+    tags = await getTagsByResourceID(id)
+  })
 </script>
 
 
 <div class="project">
+  <img class="preview" alt="preview" src={preview}/>
   {#if logo}
-  <img class="title" alt='logo' src='{logo}'/>
+  <img class="title" alt='logo' src={logo}/>
   {:else}
   <h2 class="title">{title}</h2>
   {/if}
-  <img class="preview" alt="preview" src='{preview}'>
-  <p class="description">{description}</p>
-  <a href="project/{title}" class="readmore">Read more</a>
-  {#if github}
-  <a class="url" href="{github}"><img alt="GitHub Octocat" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/></a>
-  {/if}
+  <p class="date">Age: {age} | Date: <time datetime={date}>{date}</time></p>
+  <p class="description">{@html description}</p>
+  {#if caption}
   <p class="caption">{@html caption}</p>
-  <div class="tags">
-  {#if tags}
-  {#each tags as tag}
-    <Tag {...tag} />
-  {/each}
-  {:else}
-  <p class="loading">Loading tags</p>
   {/if}
+  <div class="links">
+    {#each links as link}
+    <a href={link.href} title={link.title} class="link">
+      <img alt={link.image.alt} src={link.image.src}/>
+    </a>
+    {/each}
+  </div>
+  <div class="tags">
+    {#each Object.entries(tags) as [id, tag]}
+    <Tag {id} {...tag} />
+    {:else}
+    <p class="loading">Loading tags...</p>
+    {/each}
   </div>
 </div>
