@@ -6,5 +6,5 @@
 
   import { addRoute } from '../data/routes.js'
 
-  addRoute(title, component, path.toLowerCase(), props)
+  addRoute(title, path.toLowerCase(), category, component, props)
 </script>
