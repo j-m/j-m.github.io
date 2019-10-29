@@ -3,7 +3,7 @@
 
   import { getResources } from "../../data/tagable.js"
 
-  import Project from "./Project.svelte"
+  import Project from "../../components/Project.svelte"
 
   let projects = []
   onMount(async () => {
