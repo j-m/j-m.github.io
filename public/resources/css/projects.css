@@ -1,5 +1,4 @@
 #projects {
-  grid-area: projects;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -16,7 +15,7 @@
   "preview title title"
   "preview description description"
   "caption tags links";
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: 11rem 1fr;
   grid-template-rows: min-content min-content 1fr auto;
   height: 15rem;
   margin: 1rem;

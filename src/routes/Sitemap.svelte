@@ -30,8 +30,8 @@ onMount(async () => {
   <div class="column">
     <h2>Tags</h2>
     <ul>
-      {#each Object.entries(tags) as [id, data]}
-      <li><a href="/tag/{id}">{data.title}</a></li>
+      {#each Object.entries(tags) as [id, tag]}
+      <li><a href="/tag/{id}">{tag.data.title}</a></li>
       {/each}
     </ul>
   </div>

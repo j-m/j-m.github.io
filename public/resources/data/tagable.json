@@ -53,7 +53,7 @@
   {"resourceID":"Minesweeper","tagID":"Coursework"},
   {"resourceID":"Encrypt","tagID":"Delphi"},
   {"resourceID":"Encrypt","tagID":"Coursework"},
-  {"resourceID":"Maze","tagID":"C#"}
+  {"resourceID":"Maze","tagID":"Csharp"}
 ],
 "resources":{
   "tagable": {
