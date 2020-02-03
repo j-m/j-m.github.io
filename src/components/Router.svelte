@@ -1,7 +1,7 @@
 <script>
   export let defaultTitle;
   export let defaultComponent;
-  export let defaultProps = [];
+  export let defaultProps = {};
 
   import { get } from "svelte/store"
 
