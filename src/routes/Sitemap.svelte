@@ -23,7 +23,7 @@ sitemap.subscribe(value => map = value)
     <h2>{category}</h2>
     <ul>
       {#each links as link}
-      <li><a href="/tag/{link.id}">{link.title}</a></li>
+      <li><a href="{link.path}">{link.title}</a></li>
       {/each}
     </ul>
   </div>

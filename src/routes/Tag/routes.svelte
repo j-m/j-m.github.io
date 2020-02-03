@@ -14,5 +14,5 @@ onMount(async () => {
 </script>
 
 {#each Object.entries(tags) as [id, tag]}
-<Route title="Jonathan Marsh - Tag - {tag.data.title}" path="/tag/{id}" category="Tags" component={Tag} props={{id,tag}}/>
+<Route prefix="Jonathan Marsh - Tag - " title={tag.data.title} path="/tag/{id}" category="Tags" component={Tag} props={{id,tag}}/>
 {/each}

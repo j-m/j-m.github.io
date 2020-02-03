@@ -14,6 +14,6 @@ onMount(async () => {
 
 {#each Object.entries(projects) as [id, data]}
 {#if data.links && data.links.readMore}
-<Route title="Jonathan Marsh - Project - {data.title}" path="/project/{id}" category="Projects" component={ReadMore} props={data.links}/>
+<Route prefix="Jonathan Marsh - Project - " title={data.title} path="/project/{id}" category="Projects" component={ReadMore} props={data.links}/>
 {/if}
 {/each}

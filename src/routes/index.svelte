@@ -14,7 +14,8 @@
 
 <Router defaultTitle="Jonathan Marsh - Home" defaultComponent="{Home}"/>
 
-<Route title="Jonathan Marsh - Privacy" path="/privacy" category="root" component="{Privacy}"/>
-<Route title="Jonathan Marsh - Sitemap" path="/sitemap" category="root" component="{Sitemap}"/>
+<Route prefix="Jonathan Marsh - " title="Home" path="/" category="root" component="{Home}"/>
+<Route prefix="Jonathan Marsh - " title="Privacy" path="/privacy" category="root" component="{Privacy}"/>
+<Route prefix="Jonathan Marsh - " title="Sitemap" path="/sitemap" category="root" component="{Sitemap}"/>
 <ProjectRoutes/>
 <TagRoutes/>

@@ -1,4 +1,5 @@
 <script>
+  export let prefix = "";
   export let title;
   export let category = "";
   export let component;
@@ -7,5 +8,5 @@
 
   import { addRoute } from '../data/routes.js'
 
-  addRoute(title, path.toLowerCase(), category, component, props)
+  addRoute(prefix, title, path.toLowerCase(), category, component, props)
 </script>
