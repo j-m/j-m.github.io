@@ -39,7 +39,9 @@ onMount(async () => {
     <h2>Projects</h2>
     <ul>
       {#each Object.entries(projects) as [id, data]}
+      {#if data.links && data.links.readMore}
       <li><a href="/project/{id}">{data.title}</a></li>
+      {/if}
       {/each}
     </ul>
   </div>
