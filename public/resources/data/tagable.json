@@ -1,6 +1,5 @@
 {
 "tags":{
-  "3D":{"data":{"title": "3D"}},
   "ActionScript2":{"parent": "ProgrammingLanguage","data":{"title": "Action Script 2"}},
   "Angular":{"data":{"title": "Angular"}},
   "API":{"children":["REST","GraphQL"],"data":{"title": "API"}},
@@ -9,18 +8,19 @@
   "Coursework":{"data":{"title": "Coursework", "description": "All work relating to coursework from university, sixth form, or otherwise."}},
   "Csharp":{"parent": "ProgrammingLanguage","data":{"title": "C#"}},
   "Delphi":{"parent": "ProgrammingLanguage","data":{"title": "Delphi"}},
-  "GraphQL":{"parent": "API","data":{"title": "GraphQL"}},
-  "Hackaton":{"data":{"title": "Hackaton"}},
+  "Hackathon":{"children":["Winner"],"data":{"title": "Hackathon"}},
   "JavaScript":{"parent": "ProgrammingLanguage","data":{"title": "JavaScript"}},
   "Mongo":{"data":{"title": "Mongo"}},
   "NPM":{"data":{"title": "NPM", "description": "Node Package Manager. These are the NPM projects that I have contributed to or publish myself."}},
   "ProgrammingLanguage":{"children":["ActionScript2","C","Csharp","C++","Delphi","JavaScript","TypeScript"],"data":{"title": "Programming Language", "description": "The children of this tag are the various programming languages I have used over the years."}},
   "ReactNative":{"data":{"title": "ReactNative"}},
-  "REST":{"parent": "API","data":{"title": "REST"}},
+  "REST":{"data":{"title": "REST"}},
+  "Game":{"data":{"title": "Game"}},
   "Svelte":{"data":{"title": "Svelte"}},
   "SVG":{"data":{"title": "SVG"}},
   "TypeScript":{"parent": "ProgrammingLanguage","data":{"title": "TypeScript"}},
-  "Winner":{"data":{"title": "Winner", "description": "This project recieved an award at a hackathon."}}
+  "Website":{"parent": "Hackathon","data":{"title": "Website"}},
+  "Winner":{"data":{"title": "Winner", "description": "This project received an award at a hackathon."}}
 },
 "tagged":[
   {"resourceID":"tagable","tagID":"NPM"},
@@ -31,120 +31,136 @@
   {"resourceID":"JonHash","tagID":"C++"},
   {"resourceID":"JonHash","tagID":"Coursework"},
   {"resourceID":"jonmarsh.dev","tagID":"Svelte"},
+  {"resourceID":"jonmarsh.dev","tagID":"Website"},
   {"resourceID":"Oaty","tagID":"TypeScript"},
   {"resourceID":"Browsability","tagID":"JavaScript"},
   {"resourceID":"Browsability","tagID":"REST"},
   {"resourceID":"FaktNews","tagID":"JavaScript"},
   {"resourceID":"FaktNews","tagID":"REST"},
+  {"resourceID":"FaktNews","tagID":"SVG"},
+  {"resourceID":"FaktNews","tagID":"Winner"},
   {"resourceID":"PulfrichBird","tagID":"JavaScript"},
+  {"resourceID":"PulfrichBird","tagID":"Game"},
+  {"resourceID":"PulfrichBird","tagID":"Winner"},
   {"resourceID":"DLE","tagID":"JavaScript"},
   {"resourceID":"Widgets","tagID":"JavaScript"},
+  {"resourceID":"Widgets","tagID":"SVG"},
   {"resourceID":"TNA","tagID":"JavaScript"},
   {"resourceID":"FaceSwap","tagID":"JavaScript"},
   {"resourceID":"BSQuiz","tagID":"ActionScript2"},
   {"resourceID":"Adventure","tagID":"ActionScript2"},
+  {"resourceID":"Adventure","tagID":"Game"},
   {"resourceID":"AsteroidRun","tagID":"ActionScript2"},
+  {"resourceID":"AsteroidRun","tagID":"Game"},
   {"resourceID":"RWP","tagID":"JavaScript"},
   {"resourceID":"RWP","tagID":"ReactNative"},
   {"resourceID":"RWP","tagID":"Coursework"},
   {"resourceID":"TankTrouble","tagID":"Delphi"},
   {"resourceID":"TankTrouble","tagID":"Coursework"},
+  {"resourceID":"TankTrouble","tagID":"Game"},
   {"resourceID":"Minesweeper","tagID":"Delphi"},
   {"resourceID":"Minesweeper","tagID":"Coursework"},
+  {"resourceID":"Minesweeper","tagID":"Game"},
   {"resourceID":"Encrypt","tagID":"Delphi"},
   {"resourceID":"Encrypt","tagID":"Coursework"},
-  {"resourceID":"Maze","tagID":"Csharp"}
+  {"resourceID":"Maze","tagID":"Csharp"},
+  {"resourceID":"Maze","tagID":"Game"}
 ],
 "resources":{
   "tagable": {
     "caption": "<img alt='GitHub commit activity' src='https://badgen.net/github/last-commit/j-m/tagable'/>",
     "date": "",
-    "description": "A simple platform to tag abstracted resources with a heiracy structure.",
-    "links": [
-      { "href": "https://github.com/j-m/tagable", "title": "View the source code for Tagable", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "description": "A simple platform to tag abstracted resources with a hierarchy structure.",
+    "links": {
+      "github":"https://github.com/j-m/tagable"
+    },
     "logo": "./resources/images/logos/tagable.png",
     "preview": "",
     "title": "Tagable"
   },
   "210CT": {
-    "caption": "Private Repository",
+    "caption": "",
     "date": "",
     "description": "Programming, Algorithms, and Data Structures. console application. 13 complex tasks e.g. N-Queen Problem, Hamiltonian Paths, and string edit distance.C++ templates which automatically detected the data type of user input. I also sanitised, type checked, and error checked their input. ",
-    "github": "",
     "logo": "",
     "preview": "",
     "title": "210CT"
   },
   "TourOfBritain": {
-    "caption": "Private Repository",
+    "caption": "",
     "date": "",
     "description": "My first MEAN stack application.",
-    "github": "",
     "logo": "",
     "preview": "",
     "title": "TourOfBritain"
   },
   "JonHash": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/jonhash.svg'>",
+    "caption": "",
     "date": "2018-05-02",
     "description": "One part of module from second year at university was to design my own hashing algorithm. I am in the process of converting it to C from C++.",
-    "links": [
-      { "href": "project/jonhash", "title": "Read more about Jon Hash", "image":{ "alt": "Read more icon", "src": "resources/images/icons/read-more.svg" } },
-      { "href": "https://github.com/j-m/jonhash", "title": "View the source code for Jon Hash", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "readMore": {
+        "type": "html-url",
+        "url": "https://raw.githubusercontent.com/j-m/jonhash/master/demo.html"
+      },
+      "github": "https://github.com/j-m/jonhash"
+    },
     "logo": "",
-    "preview": "",
+    "preview": "./resources/images/previews/jonhash.gif",
     "title": "Jon Hash" 
   }, 
   "jonmarsh.dev": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/jonmarsh.dev'>",
+    "caption": "",
     "date": "2019-06-04",
     "description": "This website! Completely redesigned and overhauled to use Svelte 3.",
-    "links": [
-      { "href": "https://github.com/j-m/jonmarsh.dev", "title": "View the source code for this project", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github":"https://github.com/j-m/jonmarsh.dev"
+    },
     "logo": "",
     "preview": "./resources/images/favicon/android-chrome-512x512.png",
     "title": "jonmarsh.dev"
   },
   "Oaty": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/jmsv/oaty.svg'>",
-    "date": "",
+    "caption": "",
+    "date": "2019-05-02",
     "description": "Get objects from an array in O(1) time. Achieved by transposing the array using the keys of each object. Uses a lot of memory.",
-    "links": [
-      { "href": "https://github.com/jmsv/oaty", "title": "View the source code for Oaty", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github": "https://github.com/jmsv/oaty"
+    },
     "logo": "./resources/images/logos/oaty.jpg",
     "preview": "",
     "title": "Oaty"
   },
   "Browsability": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/browsability.svg'>",
+    "caption": "",
     "date": "2018-02-24",
-    "description": "A browser compatibilty anaylser. Scans your repositories for any CSS, HTML, and JavaScript and figures out the minimum version each browser supports.",
-    "github": "https://github.com/j-m/browsability",
-    "links": [
-      { "href": "https://github.com/j-m/browsability", "title": "View the source code for Browsability", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "description": "A browser compatibility analyser. Scans your repositories for any CSS, HTML, and JavaScript and figures out the minimum version each browser supports.",
+    "links": {
+      "github": "https://github.com/j-m/browsability"
+    },
     "logo": "./resources/images/logos/browsability.svg",
     "preview": "",
     "title": "Browsability"
   },
   "FaktNews": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/faktnews.svg'>",
+    "caption": "",
     "date": "2017-09-12",
     "description": "FaktNews grades the trustworthiness of the website you're currently viewing. This project is a recreation of my team's submission at AstonHack 2017; I originally designed and created the front-end, but decided I wanted to redo the whole project to create a faster, more robust solution.",
-    "github": "https://github.com/j-m/faktnews",
-    "links": [
-      { "href": "https://github.com/j-m/faktnews", "title": "View the source code for FaktNews", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github": "https://github.com/j-m/faktnews"
+    },
     "logo": "./resources/images/logos/faktnews.svg",
-    "preview": "",
+    "preview": "./resources/images/previews/faktnews.png",
     "title": "FaktNews"
   },
   "PulfrichBird": {
-    "caption": "<img alt='GitHub commit activity' src='https://img.shields.io/github/commit-activity/m/j-m/pulfrich-bird.svg'>",
+    "caption": "test",
     "date": "2018-02-03",
     "description": "3D Flappy Bird using the pulfrich effect. Get a pair of dark tinted sunglasses and pop out the left lens, and play away!",
-    "links": [
-      { "href": "project/pulfrichbird", "title": "Read more about Pulfrich Bird", "image":{ "alt": "Read more icon", "src": "resources/images/icons/read-more.svg" } },
-      { "href": "demo/pulfrich", "title": "Play Pulfrich Bird", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } },
-      { "href": "https://github.com/j-m/pulfrich-bird/", "title": "View the source code for Pulfrich Bird", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" }}],
+    "links": {
+      "demo": "demo/pulfrich",
+      "github": "https://github.com/j-m/pulfrich-bird/"
+    },
     "logo": "./resources/images/logos/pulfrich-bird.png",
     "preview": "./resources/images/previews/pulfrich-bird.png",
     "title": "PulfrichBird"
@@ -153,9 +169,9 @@
     "caption": "",
     "date": "2018-02-17",
     "description": "Visualises the licenses of all dependencies and displays any potential problems",
-    "github": "https://github.com/j-m/dependency-license-explorer",
-    "links": [
-      { "href": "https://github.com/j-m/dependency-license-explorer", "title": "View the source code for DLE", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github": "https://github.com/j-m/dependency-license-explorer"
+    },
     "logo": "./resources/images/logos/dle.png",
     "preview": "",
     "title": "Dependency License Explorer"
@@ -164,9 +180,9 @@
     "caption": "",
     "date": "2018-01-02",
     "description": "Collection of graphical widgets used in other projects. The current ones came from FaktNews. New features added as and when, this project has no objectives.",
-    "github": "https://github.com/j-m/Widgets",
-    "links": [
-      { "href": "https://github.com/j-m/Widgets", "title": "View the source code for Widgets", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github": "https://github.com/j-m/Widgets"
+    },
     "logo": "",
     "preview": "",
     "title": "Widgets"
@@ -175,9 +191,9 @@
     "caption": "",
     "date": "2017-10-29",
     "description": "A recreation of <a href='http://agar.io'>agar.io</a>, this project is a continuation of my work from HackNotts 2017. I aim to completely recreate the game, at the moment I would say it has about 5% of the planned features. Error checking has been added but it's a bit strict at the moment, just (soft) refresh and try again if anything happens.",
-    "github": "https://github.com/j-m/TotallyNotAgario",
-    "links": [
-      { "href": "https://github.com/j-m/TotallyNotAgario", "title": "View the source code for TNA", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": { 
+      "github": "https://github.com/j-m/TotallyNotAgario"
+    },
     "logo": "",
     "preview": "",
     "title": "Totally Not Agario"
@@ -186,9 +202,9 @@
     "caption": "",
     "date": "2017-09-18",
     "description": "Face swap using OpenCV. Another independent recreation of a team submission at BrumHack 2017. Hit a bit of a wall in development, but I am currently researching OpenCV by looking at similar projects.",
-    "github": "https://github.com/j-m/FaceSwap",
-    "links": [
-      { "href": "https://github.com/j-m/FaceSwap", "title": "View the source code for FaceSwap", "image":{ "alt": "GitHub Octocat", "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" } }],
+    "links": {
+      "github": "https://github.com/j-m/FaceSwap"
+    },
     "logo": "",
     "preview": "",
     "title": "Face Swap"
@@ -205,8 +221,9 @@
     "caption": "",
     "date": "2012-10-01",
     "description": "My first 2D platformer. The levels are difficult, and the poor performance and control make it hard, but it is possible! Good luck... (It says at the end of the first level, but might not make it that far: press 'q' when near the flag to end the level)",
-    "links": [
-      { "href": "demo/the_adventure/index.html", "title": "Play Adventure", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } }],
+    "links": { 
+      "demo": "demo/the_adventure/index.html"
+    },
     "logo": "",
     "preview": "./resources/images/previews/adventure.png",
     "title": "Adventure"
@@ -215,8 +232,9 @@
     "caption": "",
     "date": "2012-08-27",
     "description": "My first 2D sidescroller. The collision detection is awful, but there's a colour option in settings to make up for it.",
-    "links": [
-      { "href": "demo/rocket/index.html", "title": "Play Asteroid Run", "image":{ "alt": "Play icon", "src": "resources/images/icons/play.svg" } }],
+    "links": { 
+      "demo": "demo/rocket/index.html"
+    },
     "logo": "",
     "preview": "./resources/images/previews/asteroid-run.png",
     "title": "Asteroid Run"
@@ -224,7 +242,7 @@
   "RWP": {
     "caption": "",
     "date": "2015-02-01",
-    "description": "`Real World Project` Coursework. This app is a community based report system that allows the general public to submit problems to their local council. For example fly tipping, pot holes, or faulty lights. As lead programmer of the team it was my responsibility to select the appropriate tools for the job. The system would require evidence of the problem (pictures) so we needed to create a cross-platform mobile phone app. There were other restrictions to overcome as well: not all of the developers have access to the same level of equipment. One of us only had a Chromebook. After researching for two weeks I came up with the following combination: VS Code, React Native (and therefore Node.js), SQLite3, ",
+    "description": "`Real World Project` Coursework. This app is a community based report system that allows the general public to submit problems to their local council. \n\n For example fly tipping, pot holes, or faulty lights. As lead programmer of the team it was my responsibility to select the appropriate tools for the job. The system would require evidence of the problem (pictures) so we needed to create a cross-platform mobile phone app. \n\n There were other restrictions to overcome as well: not all of the developers have access to the same level of equipment. One of us only had a Chromebook. After researching for two weeks I came up with the following combination: VS Code, React Native (and therefore Node.js), SQLite3, ",
     "logo": "",
     "preview": "",
     "title": "Real World Project"
