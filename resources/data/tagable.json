@@ -101,7 +101,7 @@
     "links": {
       "readMore": {
         "type": "html-url",
-        "url": "https://raw.githubusercontent.com/j-m/jonhash/master/demo.html"
+        "url": "https://raw.githubusercontent.com/j-m/jonhash/master/docs/demo.html"
       },
       "github": "https://github.com/j-m/jonhash"
     },
