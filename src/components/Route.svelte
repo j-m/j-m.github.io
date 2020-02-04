@@ -2,7 +2,7 @@
   export let prefix = "";
   export let title;
   export let category = "";
-  export let component;
+  export let component = "";
   export let path;
   export let props = {};
 
