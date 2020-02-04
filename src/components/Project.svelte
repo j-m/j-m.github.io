@@ -162,7 +162,7 @@
     </a>
     {/if}
     {#if links.demo}
-    <a href="demo/{id}" title="Demo {title}" class="link">
+    <a href={links.demo} title="Demo {title}" class="link">
       <img alt="Demo icon" src="resources/images/icons/demo.svg"/>
     </a>
     {/if}
