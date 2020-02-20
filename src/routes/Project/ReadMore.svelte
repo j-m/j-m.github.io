@@ -1,6 +1,5 @@
 <script>
-  export let readMore;
-  export let github = "";
+  export let readMore
   
   async function getBody() {
     if (readMore.type === "html-url") {
