@@ -1,6 +1,6 @@
 {
   "name": "j-m.github.io",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "My website",
   "main": "src/main.js",
   "devDependencies": {
