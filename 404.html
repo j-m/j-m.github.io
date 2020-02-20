@@ -2,10 +2,6 @@
 <html>
 
 <head>
-  <script>
-    document.write(`<base href="${document.location.origin}/">`)
-  </script>
-
   <title>Jonathan Marsh - Home</title>
   <meta charset="utf-8">
   <meta name="author" content="Jonathan Marsh">
@@ -25,6 +21,9 @@
   <link type="text/css" rel="stylesheet" href="resources/css/filter.css" />
   <link type="text/css" rel="stylesheet" href="resources/css/projects.css" />
 
+  <script>
+    document.head.innerHTML += `<base href="${document.location.origin}/">`
+  </script>
   <script defer src='bundle.js'></script>
 </head>
 
