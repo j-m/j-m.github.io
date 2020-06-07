@@ -1,0 +1,39 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+body {
+  position: relative;
+  background: #edf1f5;
+  color: #222222;
+  margin: 0;
+}
+
+#about {
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  width: 16rem;
+}
+
+#content {
+  margin: 5rem 1rem 1rem 22rem;
+}
+
+@media all and (max-width: 50rem) {
+  #about {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 4rem auto 1rem auto;
+  }
+
+  #info {
+    display: none;
+  }
+  
+  #content {
+    margin: auto;
+  }
+}
