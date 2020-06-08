@@ -10,16 +10,13 @@
 
   let age = new Date(new Date(date) - new Date("1997-10-24")).getFullYear() - 1970
 
-  import { onMount } from 'svelte'
-  import { getTagsByResourceID } from '../data/tagable.js'
+  import Tag from './_tag.svelte'
 
-  import Tag from './Tag.svelte'
-
-  let tags = {}
-
-  onMount(async function() {
-    tags = await getTagsByResourceID(id)
-  })
+  import { Tagable } from 'tagable'
+  import * as json from './_tags.json'
+  const data = new Tagable()
+  data.import(json)
+  const tags = data.getTagsByResourceID(id)
 </script>
 
 <style>
@@ -158,12 +155,12 @@
   <div class="links">
     {#if links.readMore}
     <a href="project/{id}" title="Read more about {title}" class="link">
-      <img alt="Read more icon" src="resources/images/icons/read-more.svg"/>
+      <img alt="Read more icon" src="images/icons/read-more.svg"/>
     </a>
     {/if}
     {#if links.demo}
     <a href={links.demo} title="Demo {title}" class="link">
-      <img alt="Demo icon" src="resources/images/icons/demo.svg"/>
+      <img alt="Demo icon" src="images/icons/demo.svg"/>
     </a>
     {/if}
     {#if links.github}

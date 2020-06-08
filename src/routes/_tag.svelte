@@ -1,15 +1,12 @@
 <script>
   export let id
   
-  import { onMount } from 'svelte'
-  import { getTags } from '../data/tagable.js'
-
-  let title
-
-  onMount(async function() {
-    const tags = await getTags()
-    title = tags[id].data.title
-  })
+  import { Tagable } from 'tagable'
+  import * as json from './_tags.json'
+  
+  const data = new Tagable()
+  data.import(json)
+  const title = data.tags[id].data.title
 </script>
 
 <style>
