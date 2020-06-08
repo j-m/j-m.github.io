@@ -1,17 +1,27 @@
-<script>
-  export let id
-  export let tag
+<script context="module">
+export async function preload({ params, query }) {
+	const res = await this.fetch(`tag/${params.slug}.json`);
+	const data = await res.json();
 
-  import Project from '../_project.svelte'
-  import Tag from '../_tag.svelte'
-
-  import { Tagable } from 'tagable'
-  import * as json from '../_tags.json'
-  const data = new Tagable()
-  data.import(json)
-  const projects = data.getResourcesByTagID(id)
-  
+	if (res.status === 200) {
+		return data;
+	} else {
+		this.error(res.status, data.message);
+	}
+}
 </script>
+
+<script>
+  export let projects;
+  export let tag;
+  
+  import Project from '../../components/project.svelte'
+  import Tag from '../../components/tag.svelte'
+</script>
+
+<svelte:head>
+	<title>Jonathan Marsh - Tag - {tag.data.title}</title>
+</svelte:head>
 
 <h1>{tag.data.title}</h1>
 
@@ -53,3 +63,4 @@
   <p>No projects directly associate with this tag</p>
   {/each}
 </div>
+

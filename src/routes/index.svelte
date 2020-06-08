@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Jonathan Marsh - Home</title>
 </svelte:head>
 
 <style>
@@ -54,27 +54,19 @@
   padding: 10%;
 }
 
-#info {
-  text-align: left;
-}
-
-#links {
-    
-}
-
 #copy {
   font-size: small;
 }
 </style>
 
 <div id="about">
-  <img id="picture" src="images/me-square.png" />
+  <img id="picture" alt="Pciture of Jonathan Marsh" src="images/me-square.png" />
   <p id="name">Jonathan Marsh</p>
   <div id="social">
-    <a href="https://github.com/j-m"><img id="github" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" /></a>
-    <a href="https://stackoverflow.com/users/4907552"><img height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" /></a>
-    <a href="https://www.linkedin.com/in/jonrmarsh/"><img height="50" id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" /></a>
-    <a href="https://www.hackerrank.com/jaunt"><img height="50" id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg" /></a>
+    <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" /></a>
+    <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" /></a>
+    <a href="https://www.linkedin.com/in/jonrmarsh/"><img alt="LinkedIn logo" height="50" id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" /></a>
+    <a href="https://www.hackerrank.com/jaunt"><img alt="HackerRank logo" height="50" id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg" /></a>
   </div>
   <p id="copy">&copy; Copyright 2019, Jonathan Marsh<br/> All rights reserved</p>
 </div>

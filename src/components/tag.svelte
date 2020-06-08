@@ -1,12 +1,7 @@
 <script>
   export let id
-  
-  import { Tagable } from 'tagable'
-  import * as json from './_tags.json'
-  
-  const data = new Tagable()
-  data.import(json)
-  const title = data.tags[id].data.title
+  import tagable from "../data/tags"
+  const title = tagable.tags[id].data.title
 </script>
 
 <style>
@@ -25,6 +20,6 @@
 }
 </style>
 
-<a title="View everything tagged '{title}'" href="tag/{id}">
+<a rel='prefetch' title="View everything tagged '{title}'" href="/tag/{id}/">
   <div class='tag'>{title}</div>
 </a>

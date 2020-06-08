@@ -1,15 +1,9 @@
-<script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`project.json`).then(r => r.json()).then(projects => {
-			return { projects };
-		});
-	}
-</script>
-
 <script>
-  export let projects;
-  import Project from "../_project.svelte"
-  import Filter from "./_filter.svelte"
+  import tagable from "../../data/tags" 
+  export let projects = tagable.resources
+   
+  import Project from "../../components/project.svelte"
+  import Filter from "../../components/filter.svelte"
 </script>
 
 <style>
@@ -24,12 +18,10 @@
 	<title>Jonathan Marsh - Projects</title>
 </svelte:head>
 
-<Filter/>
+<!--Filter/-->
 
 <div id="projects">
   {#each Object.entries(projects) as [id, data]}
     <Project {id} {...data} />
-  {:else}
-    <p class="loading">Loading projects...</p>
   {/each}
 </div>

@@ -10,13 +10,9 @@
 
   let age = new Date(new Date(date) - new Date("1997-10-24")).getFullYear() - 1970
 
-  import Tag from './_tag.svelte'
-
-  import { Tagable } from 'tagable'
-  import * as json from './_tags.json'
-  const data = new Tagable()
-  data.import(json)
-  const tags = data.getTagsByResourceID(id)
+  import Tag from './tag.svelte'
+  import tagable from "../data/tags"
+  const tags = tagable.getTags(id)
 </script>
 
 <style>
@@ -154,7 +150,7 @@
   {/if}
   <div class="links">
     {#if links.readMore}
-    <a href="project/{id}" title="Read more about {title}" class="link">
+    <a href="/project/{id}/" title="Read more about {title}" class="link">
       <img alt="Read more icon" src="images/icons/read-more.svg"/>
     </a>
     {/if}

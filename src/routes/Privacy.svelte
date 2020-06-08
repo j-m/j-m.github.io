@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Jonathan Marsh - Privacy Policy</title>
+</svelte:head>
+
 <h1>Privacy</h1>
 
 <p>I do not directly use any cookies whatsoever, be it for tracking, functional purposes, or otherwise.</p>
