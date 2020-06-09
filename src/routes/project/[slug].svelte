@@ -4,9 +4,8 @@ export async function preload({ params, query }) {
 	const data = await res.json();
 
   if (data.project.links.readMore.type === "html-url") {
-    data.project.html = await fetch(data.project.links.readMore.url).then(response => { 
-      return response.text()
-    })
+    const page = await this.fetch(data.project.links.readMore.url)
+    data.project.html = await page.text()
   }
 
 	if (res.status === 200) {

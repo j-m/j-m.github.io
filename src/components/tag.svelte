@@ -20,6 +20,6 @@
 }
 </style>
 
-<a rel='prefetch' title="View everything tagged '{title}'" href="/tag/{id}/">
+<a rel='prefetch' title="View everything tagged '{title}'" href="tag/{id}">
   <div class='tag'>{title}</div>
 </a>

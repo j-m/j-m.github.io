@@ -3,9 +3,9 @@ import tagable from "../data/tags"
 
 var sitemap = {
   "Main": [
-    {path: "/", title: "Home"},
-    {path: "/privacy/", title: "Privacy"},
-    {path: "/sitemap/", title: "Sitemap"}
+    {path: ".", title: "Home"},
+    {path: "privacy", title: "Privacy"},
+    {path: "sitemap", title: "Sitemap"}
   ]
 }
 
@@ -14,7 +14,7 @@ function addRoute(category, path, title) {
 }
 
 for (let [key, tag] of Object.entries(tagable.tags)) {
-  addRoute("Tags", `/tag/${key}/`, tag.data.title)
+  addRoute("Tags", `tag/${key}`, tag.data.title)
 }
 
 for (let [key, project] of Object.entries(tagable.resources)) {
@@ -23,7 +23,7 @@ for (let [key, project] of Object.entries(tagable.resources)) {
       addRoute("Demo", project.links.demo, project.title)  
     }
     if (project.links.readMore) {
-      addRoute("Read More", `/project/${key}/`, project.title)  
+      addRoute("Read More", `project/${key}`, project.title)  
     }
   }
 }
@@ -37,6 +37,12 @@ for (let [key, project] of Object.entries(tagable.resources)) {
 
 .column {
   flex: 1;
+}
+.column ul li a {
+  text-decoration: none!important;
+}
+.column ul li a:hover {
+  background-color: #FFFF00;
 }
 </style>
 

@@ -150,7 +150,7 @@
   {/if}
   <div class="links">
     {#if links.readMore}
-    <a href="/project/{id}/" title="Read more about {title}" class="link">
+    <a href="project/{id}" title="Read more about {title}" class="link">
       <img alt="Read more icon" src="images/icons/read-more.svg"/>
     </a>
     {/if}
