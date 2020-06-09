@@ -69,11 +69,11 @@
     <span>
       <li><a href="." id="JonMarsh">JonMarsh</a></li>
   		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-  		<li><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="/project/">Projects</a></li>
+  		<li><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project">Projects</a></li>
     </span>
     <span>
-      <li><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="/sitemap/">Site Map</a></li>
-      <li><a aria-current="{segment === 'privacy' ? 'page' : undefined}" href="/privacy/">Privacy Policy</a></li>
+      <li><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></li>
+      <li><a aria-current="{segment === 'privacy' ? 'page' : undefined}" href="privacy">Privacy Policy</a></li>
     </span>
 	</ul>
 </nav>

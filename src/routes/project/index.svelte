@@ -1,6 +1,13 @@
+<script context="module">
+  import tagable from "../../data/tags"
+  
+	export function preload({ params, query }) {
+    return { projects: tagable.resources }
+	}
+</script>
+
 <script>
-  import tagable from "../../data/tags" 
-  export let projects = tagable.resources
+  export let projects
    
   import Project from "../../components/project.svelte"
   import Filter from "../../components/filter.svelte"
@@ -21,7 +28,13 @@
 <!--Filter/-->
 
 <div id="projects">
-  {#each Object.entries(projects) as [id, data]}
-    <Project {id} {...data} />
-  {/each}
+  {#await projects}
+    <p>Loading projects...</p>
+  {:then projects}
+    {#each Object.entries(projects) as [id, data]}
+      <Project {id} {...data} />
+    {/each}
+  {:catch error}
+    <p>error</p>
+  {/await}
 </div>

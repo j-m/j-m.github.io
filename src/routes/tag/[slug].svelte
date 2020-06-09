@@ -1,14 +1,16 @@
 <script context="module">
-export async function preload({ params, query }) {
-	const res = await this.fetch(`tag/${params.slug}.json`);
-	const data = await res.json();
+  import tagable from "../../data/tags"
 
-	if (res.status === 200) {
-		return data;
-	} else {
-		this.error(res.status, data.message);
-	}
-}
+  export async function preload({ params, query }) {
+    const tag = tagable.tags[params.slug]
+  	if (tag) {
+  		return {
+        tag,
+        projects: tagable.getResources(params.slug)
+      }
+    }
+    this.error(404, "Not found")
+  }
 </script>
 
 <script>

@@ -1,19 +1,21 @@
 <script context="module">
-export async function preload({ params, query }) {
-	const res = await this.fetch(`project/${params.slug}.json`);
-	const data = await res.json();
+  import tagable from "../../data/tags"
+  
+  export async function preload({ params, query }) {
+    const project = tagable.resources[params.slug]
+  	if (project) {
+      if (project.links.readMore.type === "html-url") {
+        const page = await this.fetch(project.links.readMore.url)
+        project.html = await page.text()
+      }
 
-  if (data.project.links.readMore.type === "html-url") {
-    const page = await this.fetch(data.project.links.readMore.url)
-    data.project.html = await page.text()
+  		return {
+        project,
+        tags: tagable.getTags(params.slug)
+      }
+    }
+    this.error(404, "Not found")
   }
-
-	if (res.status === 200) {
-		return data;
-	} else {
-		this.error(res.status, data.message);
-	}
-}
 </script>
 
 <script>
