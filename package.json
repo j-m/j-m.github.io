@@ -23,8 +23,8 @@
   },
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --build-dir build",
-    "export": "sapper export --build-dir build",
+    "build": "sapper build",
+    "export": "sapper export",
     "start": "node build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",

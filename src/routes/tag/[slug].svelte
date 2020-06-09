@@ -21,6 +21,14 @@
   import Tag from '../../components/tag.svelte'
 </script>
 
+<style>
+#projects {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+</style>
+
 <svelte:head>
 	<title>Jonathan Marsh - Tag - {tag.data.title}</title>
 </svelte:head>
