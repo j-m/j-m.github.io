@@ -154,11 +154,6 @@
       <img alt="Read more icon" src="images/icons/read-more.svg"/>
     </a>
     {/if}
-    {#if links.demo}
-    <a href="{links.demo}" title="Demo {title}" class="link">
-      <img alt="Demo icon" src="images/icons/demo.svg"/>
-    </a>
-    {/if}
     {#if links.github}
     <a href="{links.github}" title="View the source code for {title}" class="link">
       <img alt="GitHub Octocat" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
