@@ -23,8 +23,7 @@
 
 <p>LinkedIn, the LinkedIn logo, the IN logo and InMail are registered trademarks or trademarks of LinkedIn Corporation and its affiliates in the United States and/or other countries.</p>
 <p>LINKEDIN DISCLAIMS ANY WARRANTIES THAT MAY BE EXPRESS OR IMPLIED BY LAW REGARDING THE LINKEDIN MARKS (TO THE EXTENT PERMITTED BY LAW), INCLUDING WARRANTIES AGAINST INFRINGEMENT.</p>
-<p>I, Jonathan Marsh, have read the terms outlined on <a href="https://brand.linkedin.com/policies">LinkedIn's branding policies</a> page and have complied with the terms (2020/06/10).</p>
-<p>You, the visitor, must not obtain the LinkedIn logo from jonmarsh.dev, please follow the branding policy that is relevant for you.</p>
+<p>You, the visitor, must not obtain the LinkedIn logo from jonmarsh.dev, please follow the <a href="https://brand.linkedin.com/policies">LinkedIn's branding policy</a> that is relevant for you.</p>
 
 <h2>GitHub</h2>
 
