@@ -4,6 +4,7 @@ import tagable from "../data/tags"
 var sitemap = {
   "Main": [
     {path: ".", title: "Home"},
+    {path: "project", title: "Projects"},
     {path: "privacy", title: "Privacy"},
     {path: "sitemap", title: "Sitemap"}
   ]

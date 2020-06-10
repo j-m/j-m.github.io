@@ -73,7 +73,7 @@
     </span>
     <span>
       <li><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></li>
-      <li><a aria-current="{segment === 'privacy' ? 'page' : undefined}" href="privacy">Privacy Policy</a></li>
+      <li><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies">Policies</a></li>
     </span>
 	</ul>
 </nav>
