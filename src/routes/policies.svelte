@@ -25,3 +25,10 @@
 <p>LINKEDIN DISCLAIMS ANY WARRANTIES THAT MAY BE EXPRESS OR IMPLIED BY LAW REGARDING THE LINKEDIN MARKS (TO THE EXTENT PERMITTED BY LAW), INCLUDING WARRANTIES AGAINST INFRINGEMENT.</p>
 <p>I, Jonathan Marsh, have read the terms outlined on <a href="https://brand.linkedin.com/policies">LinkedIn's branding policies</a> page and have complied with the terms (2020/06/10).</p>
 <p>You, the visitor, must not obtain the LinkedIn logo from jonmarsh.dev, please follow the branding policy that is relevant for you.</p>
+
+<h2>GitHub</h2>
+
+<p>GITHUB®, the GITHUB® logo design, OCTOCAT® and the OCTOCAT® logo design are exclusive trademarks registered in the United States by GitHub, Inc.<br/>
+The OCTOCAT design is the exclusive property of GitHub, Inc and has been federally registered with the United States Copyright Office. All rights reserved.<br/>
+No adaptation or use of any kind of any of our registered trademarks or copyrights, or any other contents of this website, is allowed without the express written permission of GitHub, Inc.</p>
+<p>You, the visitor, must not obtain the GitHub logo from jonmarsh.dev, please refer to <a href="https://github.com/logos">GitHub's branding policies</a>.</p>

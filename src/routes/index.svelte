@@ -54,16 +54,13 @@
   padding: 10%;
 }
 
-#copy {
-  font-size: small;
-}
 </style>
 
 <div id="about">
   <img id="picture" alt="Pciture of Jonathan Marsh" src="images/me-square.png" />
   <p id="name">Jonathan Marsh</p>
   <div id="social">
-    <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" /></a>
+    <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="images/logos/github.png" /></a>
     <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" /></a>
     <a href="https://www.linkedin.com/in/jonrmarsh/"><img alt="LinkedIn logo" height="50" id="linkedin" src="/images/logos/linkedin.png" /></a>
     <a href="https://www.hackerrank.com/jaunt"><img alt="HackerRank logo" height="50" id="hackerrank" src="https://assets.brandfolder.com/y9ol94wb/original/HackerRank_logo.svg" /></a>
