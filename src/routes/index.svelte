@@ -29,25 +29,19 @@
 #social a {
   text-decoration: none;
   height: 3rem;
+  width: 3rem;
+  padding: 1rem;
   display: inline-block;
   box-sizing: content-box;
 }
 
 #social a:hover {
-  border-bottom: 3px solid black;
+  background: lightgrey;
 }
 
 #social a img {
   height: 3rem;
   box-sizing: border-box;
-}
-
-#github {
-  padding: 10%;
-}
-
-#linkedin {
-  padding: 14%;
 }
 
 </style>
