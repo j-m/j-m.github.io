@@ -10,16 +10,9 @@
 
   let age = new Date(new Date(date) - new Date("1997-10-24")).getFullYear() - 1970
 
-  import { onMount } from 'svelte'
-  import { getTagsByResourceID } from '../data/tagable.js'
-
-  import Tag from './Tag.svelte'
-
-  let tags = {}
-
-  onMount(async function() {
-    tags = await getTagsByResourceID(id)
-  })
+  import Tag from './tag.svelte'
+  import tagable from "../data/tags"
+  const tags = tagable.getTags(id)
 </script>
 
 <style>
@@ -158,16 +151,16 @@
   <div class="links">
     {#if links.readMore}
     <a href="project/{id}" title="Read more about {title}" class="link">
-      <img alt="Read more icon" src="resources/images/icons/read-more.svg"/>
+      <img alt="Read more icon" src="images/icons/read-more.svg"/>
     </a>
     {/if}
     {#if links.demo}
-    <a href={links.demo} title="Demo {title}" class="link">
-      <img alt="Demo icon" src="resources/images/icons/demo.svg"/>
+    <a href="{links.demo}" title="Demo {title}" class="link">
+      <img alt="Demo icon" src="images/icons/demo.svg"/>
     </a>
     {/if}
     {#if links.github}
-    <a href={links.github} title="View the source code for {title}" class="link">
+    <a href="{links.github}" title="View the source code for {title}" class="link">
       <img alt="GitHub Octocat" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
     </a>
     {/if}
