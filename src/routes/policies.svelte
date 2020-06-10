@@ -2,7 +2,7 @@
 	<title>Jonathan Marsh - Policies</title>
 </svelte:head>
 
-<h1>Copyright</h1>
+<h2>Copyright</h2>
 <p>Website &copy; Copyright 2019, Jonathan Marsh.</p>
 <p>All rights reserved.</p>
 <p>See license infomation in each repository for exemptions and further information.</p>
