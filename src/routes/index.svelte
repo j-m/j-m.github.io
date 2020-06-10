@@ -57,7 +57,7 @@
   <p id="name">Jonathan Marsh</p>
   <div id="social">
     <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="images/logos/github.png" /></a>
-    <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" /></a>
+    <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="images/logos/stackoverflow.png" /></a>
     <a href="https://www.linkedin.com/in/jonrmarsh/"><img alt="LinkedIn logo" height="50" id="linkedin" src="/images/logos/linkedin.png" /></a>
   </div>
 
