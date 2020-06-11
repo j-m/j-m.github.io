@@ -18,6 +18,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 2rem;
 }
 </style>
 
