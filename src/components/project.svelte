@@ -148,6 +148,7 @@
   {#if caption}
   <p class="caption">{@html caption}</p>
   {/if}
+  {#if links}
   <div class="links">
     {#if links.readMore}
     <a href="project/{id}" title="Read more about {title}" class="link">
@@ -165,6 +166,7 @@
     </a>
     {/if}
   </div>
+  {/if}
   <div class="tags">
     {#each Object.entries(tags) as [id, tag]}
     <Tag {id} />
