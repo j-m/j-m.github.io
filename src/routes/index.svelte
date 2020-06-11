@@ -4,11 +4,32 @@
 
 <style>
 #about {
-  white-space: nowrap;
+  height: 100%;
+  display : flex;
+  align-items : center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#name {
+  margin: 0.5rem 0 0 0;
+  font-size: 5rem;
+  font-weight: bold;
   text-align: center;
+  position: relative;
 }
 
 #picture {
+  position: relative;
+  width:0;
+  height:0;
+  display: inline-block;
+}
+
+#picture img {
+  position: absolute;
+  left: -17rem;
+  top: -8.5rem;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -16,14 +37,9 @@
   width: 15rem;
 }
 
-#name {
-  margin: 0.5rem 0 0 0;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 #social {
-  height: 3rem;
+  white-space: nowrap;
+  text-align: center;
 }
 
 #social a {
@@ -44,15 +60,20 @@
   box-sizing: border-box;
 }
 
+#quote {
+  font-family: "Playfair Display",serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
 </style>
 
 <div id="about">
-  <img id="picture" alt="Pciture of Jonathan Marsh" src="images/me-square.png" />
-  <p id="name">Jonathan Marsh</p>
+  <p id="name"><span id="picture"><img alt="Jonathan Marsh" src="images/me-square.png" /></span>Jonathan Marsh</p>
   <div id="social">
     <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="images/logos/github.png" /></a>
     <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="images/logos/stackoverflow.png" /></a>
     <a href="https://www.linkedin.com/in/jonrmarsh/"><img alt="LinkedIn logo" height="50" id="linkedin" src="/images/logos/linkedin.png" /></a>
   </div>
-
+  <p id="quote">Me? Mad? Absolutely! But all the best people are</p>
 </div>

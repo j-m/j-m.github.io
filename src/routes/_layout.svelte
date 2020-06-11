@@ -10,6 +10,7 @@
 		padding: 5rem 2rem 2rem 2rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+    height: 100%;
 	}
   
 </style>

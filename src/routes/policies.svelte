@@ -39,3 +39,5 @@ No adaptation or use of any kind of any of our registered trademarks or copyrigh
 <h2>StackOverflow</h2>
 <p>The Stack Exchange name and logos are trademarks of Stack Exchange Inc. The names and logos for sites and products operating on the Stack Exchange network are also trademarks of Stack Exchange Inc.</p>
 <p>You, the visitor, must not obtain the StackOverflow logo from jonmarsh.dev, please refer to <a href="https://stackoverflow.com/legal/trademark-guidance">StackOverflow's branding policies</a> which permits use of <a href="https://stackoverflow.com/company/logos">StackOverflow's logos</a>.</p>
+
+<br/>
