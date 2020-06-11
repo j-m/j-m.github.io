@@ -5,7 +5,7 @@ var sitemap = {
   "Main": [
     {path: ".", title: "Home"},
     {path: "project", title: "Projects"},
-    {path: "privacy", title: "Privacy"},
+    {path: "policies", title: "Policies"},
     {path: "sitemap", title: "Sitemap"}
   ]
 }
