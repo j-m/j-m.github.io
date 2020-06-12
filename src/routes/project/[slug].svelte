@@ -33,9 +33,7 @@
 
 <div class="tags">
   {#each Object.entries(tags) as [id, tag]}
-  <Tag {id} />
-  {:else}
-  <p class="loading">Loading tags...</p>
+  <Tag {id} title={tag.data.title}/>
   {/each}
 </div>
 

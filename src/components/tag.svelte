@@ -1,7 +1,6 @@
 <script>
   export let id
-  import tagable from "../data/tags"
-  const title = tagable.tags[id].data.title
+  export let title
 </script>
 
 <style>
