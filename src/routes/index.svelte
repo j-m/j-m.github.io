@@ -93,7 +93,7 @@
   <p id="quote">Me? Mad? Absolutely! But all the best people are</p>
   <ul id="info">
     <li><img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />Cambridgeshire, UK</li>
-    <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc (Hons), Coventry University, UK</li>
+    <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc</li>
     <li><img src="images/openmoji/1F50D.svg" alt="Emoji of a magnifying glass" /><img src="images/openmoji/1F4BC.svg" alt="Emoji of a brief case" />Software Developer</li>
   </ul>
 </div>
