@@ -12,7 +12,7 @@
 }
 
 #name {
-  margin: 0.5rem 0 0 0;
+  margin: 0;
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
@@ -68,6 +68,7 @@
 
 #info {
   list-style: none;
+  margin: 0;
 }
 
 #info li {
@@ -84,6 +85,11 @@
 </style>
 
 <div id="about">
+  <ul id="info">
+    <li><img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />Cambridgeshire, UK</li>
+    <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc</li>
+    <li><img src="images/openmoji/1F50D.svg" alt="Emoji of a magnifying glass" />Software Developer role</li>
+  </ul>
   <p id="name"><span id="picture"><img alt="Jonathan Marsh" src="images/me-square.png" /></span>Jonathan Marsh</p>
   <div id="social">
     <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="images/logos/github.png" /></a>
@@ -91,9 +97,4 @@
     <a href="https://www.linkedin.com/in/jonrmarsh/"><img alt="LinkedIn logo" height="50" id="linkedin" src="/images/logos/linkedin.png" /></a>
   </div>
   <p id="quote">Me? Mad? Absolutely! But all the best people are</p>
-  <ul id="info">
-    <li><img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />Cambridgeshire, UK</li>
-    <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc</li>
-    <li><img src="images/openmoji/1F50D.svg" alt="Emoji of a magnifying glass" /><img src="images/openmoji/1F4BC.svg" alt="Emoji of a brief case" />Software Developer</li>
-  </ul>
 </div>

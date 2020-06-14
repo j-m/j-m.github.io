@@ -2,6 +2,15 @@
 	<title>Jonathan Marsh - Policies</title>
 </svelte:head>
 
+<style>
+a {
+  font-weight: bold;
+}
+a:hover {
+  background: yellow;
+}
+</style>
+
 <h2>Copyright</h2>
 <p>Website &copy; Copyright 2019, Jonathan Marsh.</p>
 <p>All rights reserved.</p>
@@ -42,6 +51,7 @@ No adaptation or use of any kind of any of our registered trademarks or copyrigh
 
 <hr/>
 <h2>OpenEmoji</h2>
-<p>The emojis used on the home page were designed by <a href="https://openmoji.org/">OpenMoji</a>. No changes made. License: CC BY-SA 4.0</p>
+<p>The emojis used on the home page were designed by OpenMoji. No changes made. License: CC BY-SA 4.0</p>
+<p>You, the visitor, must not obtain any of OpenMoji's emojis from jonmarsh.dev, please refer to <a href="https://openmoji.org/">OpenMoji's website</a> to acquire your own copy.</p>
 
 <br/>
