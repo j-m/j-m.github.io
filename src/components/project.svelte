@@ -6,13 +6,11 @@
   export let logo
   export let preview
   export let title
+  export let age
   export let links = {}
-
-  let age = new Date(new Date(date) - new Date("1997-10-24")).getFullYear() - 1970
+  export let tags = []
 
   import Tag from './tag.svelte'
-  import tagable from "../data/tags"
-  const tags = tagable.getTags(id)
 </script>
 
 <style>
@@ -119,10 +117,6 @@
   font-weight: bold;
 }
 
-.project .loading {
-  margin: 0;
-}
-
 .project > .tags {
   grid-area: tags;
   padding: 0.1rem;
@@ -148,6 +142,7 @@
   {#if caption}
   <p class="caption">{@html caption}</p>
   {/if}
+  {#if links}
   <div class="links">
     {#if links.readMore}
     <a href="project/{id}" title="Read more about {title}" class="link">
@@ -161,15 +156,14 @@
     {/if}
     {#if links.github}
     <a href="{links.github}" title="View the source code for {title}" class="link">
-      <img alt="GitHub Octocat" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
+      <img alt="GitHub Octocat" src="images/logos/github.png"/>
     </a>
     {/if}
   </div>
+  {/if}
   <div class="tags">
     {#each Object.entries(tags) as [id, tag]}
-    <Tag {id} />
-    {:else}
-    <p class="loading">Loading tags...</p>
+    <Tag {id} title={tag.data.title}/>
     {/each}
   </div>
 </div>

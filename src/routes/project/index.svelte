@@ -18,6 +18,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 2rem;
 }
 </style>
 
@@ -28,13 +29,7 @@
 <!--Filter/-->
 
 <div id="projects">
-  {#await projects}
-    <p>Loading projects...</p>
-  {:then projects}
-    {#each Object.entries(projects) as [id, data]}
-      <Project {id} {...data} />
-    {/each}
-  {:catch error}
-    <p>error</p>
-  {/await}
+  {#each Object.entries(projects) as [id, data]}
+    <Project {id} {...data} tags={tagable.getTags(id)} age={new Date(new Date(data.date) - new Date("1997-10-24")).getFullYear() - 1970}/>
+  {/each}
 </div>

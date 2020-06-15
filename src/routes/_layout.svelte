@@ -5,13 +5,13 @@
 </script>
 
 <style>
-	main {
-		position: relative;
-		padding: 5rem 2rem 2rem 2rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-  
+  main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 </style>
 
 <Nav {segment}/>
