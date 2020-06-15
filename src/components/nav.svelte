@@ -20,23 +20,6 @@
       background-color: rgba(255, 255, 255, 0.5);
     }
   }
-  
-  @media only screen and (max-width: 40rem) {    
-    nav ul li {
-      display: block;
-      width: 100%;
-    }
-    
-    a:not(#JonMarsh):hover,
-    [aria-current] {
-  		border-bottom-color: transparent!important;
-      text-decoration: underline;
-    }
-    
-    a:not(#JonMarsh):hover {
-      background-color: rgba(100, 100, 100, 0.10);
-  	}
-  }
 
 	ul {
 		margin: 0;
@@ -71,11 +54,14 @@
     color: rgb(29, 29, 29)!important;
   }
   
-  a:not(#JonMarsh):hover, 
+  a:not(#JonMarsh):hover {
+    background-color: rgba(100, 100, 100, 0.10);
+	}
+  
 	[aria-current] {
 		border-bottom-color: black;
-	}
-
+  }
+  
   #JonMarsh{
     color: black!important;
     font-weight: bold;
@@ -98,7 +84,7 @@
     float: right;
   }
   
-  #menutoggle:checked ~ span{
+  #menutoggle:checked ~ span:nth-of-type(2){
     display: none;
   }
   
@@ -109,11 +95,35 @@
   #menutoggle:not(:checked) ~ label img:nth-of-type(1) {
     display: none;
   }
+  
+  @media only screen and (max-width: 40rem) {    
+    nav ul span:nth-of-type(2) li {
+      display: block;
+      width: 100%;
+    }
+    
+    span:nth-of-type(2) a:not(#JonMarsh):hover,
+    span:nth-of-type(2) [aria-current] {
+  		border-bottom-color: transparent!important;
+      text-decoration: underline;
+    }
+  }
+  
+  @media only screen and (min-width: 40rem) {
+    #menutoggle ~ label {
+      display: none;
+    }
+    
+    #menutoggle:checked ~ span:nth-of-type(2){
+      display: block;
+      margin-right: 1rem;
+    }
+  }
 </style>
 
 <nav>
 	<ul>
-    <input type="checkbox" id="menutoggle" name="menutoggle"/>
+    <input type="checkbox" id="menutoggle" name="menutoggle" checked/>
     <a href="." id="JonMarsh">JonMarsh</a>
     <label for="menutoggle">
       <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
