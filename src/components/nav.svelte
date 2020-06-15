@@ -22,11 +22,7 @@
     }
   }
   
-  @media only screen and (max-width: 40rem) {
-    nav {
-      padding-bottom: 1rem;
-    }
-    
+  @media only screen and (max-width: 40rem) {    
     nav ul li {
       display: block;
       width: 100%;
@@ -84,23 +80,33 @@
   #JonMarsh{
     color: black!important;
     font-weight: bold;
+    float: left;
   }
   
   #menutoggle {
     display: none;
   }
   
-  #menutoggle ~ span:nth-of-type(2) li label img {
-    height: 2rem;
-    width: 2rem;
-    padding: 0.75rem 0;
+  #menutoggle ~ label {
+    float: right;
   }
   
-  #menutoggle:checked ~ span:nth-of-type(2) li label img:nth-of-type(2){
+  #menutoggle ~ label img {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem 0;
+    float: right;
+  }
+  
+  #menutoggle:checked ~ span{
     display: none;
   }
   
-  #menutoggle:not(:checked) ~ span:nth-of-type(2) li label img:nth-of-type(1) {
+  #menutoggle:checked ~ label img:nth-of-type(2){
+    display: none;
+  }
+  
+  #menutoggle:not(:checked) ~ label img:nth-of-type(1) {
     display: none;
   }
 </style>
@@ -108,21 +114,19 @@
 <nav>
 	<ul>
     <input type="checkbox" id="menutoggle" name="menutoggle" checked/>
+    <a href="." id="JonMarsh">JonMarsh</a>
+    <label for="menutoggle">
+      <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
+      <img alt="close navigation menu (close icon emoji)" src="images/openmoji/E24E.svg"/>
+    </label> 
     <span>
-      <li><a href="." id="JonMarsh">JonMarsh</a></li>
   		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
   		<li><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project">Projects</a></li>
     </span>
     <span>
-      <li>
-        <label for="menutoggle">
-          <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
-          <img alt="close navigation menu (close icon emoji)" src="images/openmoji/E24E.svg"/>
-        </label> 
-      </li>
       <li><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></li>
       <li><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies">Policies</a></li>
-   </span>
+    </span>
 	</ul>
 </nav>
 
