@@ -4,32 +4,30 @@
 
 <style>
 #about {
-  display : flex;
+  display : grid;
   height: 100%;
-  align-items : center;
-  justify-content: center;
-  flex-direction: column;
+  grid-template-areas: 
+  ". . . ."
+  ". picture info ."
+  ". picture name ."
+  ". picture social ."
+  ". picture quote ."
+  ". . . .";
+  grid-template-columns: 1fr 15rem auto 15rem 1fr;
+  grid-template-rows: 1fr auto auto auto auto 1fr;
 }
 
 #name {
+  grid-area: name;
+  text-align: center;
   margin: 0;
   font-size: 5rem;
   font-weight: bold;
-  text-align: center;
   position: relative;
 }
 
 #picture {
-  position: relative;
-  width:0;
-  height:0;
-  display: inline-block;
-}
-
-#picture img {
-  position: absolute;
-  left: -17rem;
-  top: -8.5rem;
+  grid-area: picture;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -38,6 +36,7 @@
 }
 
 #social {
+  grid-area: social;
   white-space: nowrap;
   text-align: center;
 }
@@ -61,18 +60,23 @@
 }
 
 #quote {
+  grid-area: quote;
   font-family: "Playfair Display",serif;
   font-style: italic;
   font-weight: 400;
+  text-align: center;
 }
 
 #info {
+  grid-area: info;
   list-style: none;
   margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
 #info li {
-  white-space: nowrap;
   display: inline-block;
   margin-right: 2rem;
 }
@@ -82,15 +86,71 @@
   height: 2rem;
 }
  
+ 
+@media only screen and (max-width: 95rem) { 
+  #about {
+    grid-template-columns:1fr 15rem auto 1fr;
+  }
+}
+
+@media only screen and (max-width: 70rem) { 
+  #name {
+    word-spacing: 100vw;
+  }
+  
+  #about {
+    grid-template-areas: 
+    ". . ."
+    "picture name ."
+    "info social ."
+    "info quote ."
+    ". . .";
+    grid-template-columns: 15rem auto 1fr;
+    grid-template-rows: 1fr 15rem auto auto 1fr;
+  }
+  
+  #info {
+    margin: 1rem auto 0 auto;
+  }
+  
+  #info li {
+    display: block;
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 50rem) { 
+  #about {
+    grid-template-areas: 
+      ". . ."
+      ". picture ."
+      ". name ."
+      ". social ."
+      ". . .";
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr auto auto auto 1fr;
+  }
+  
+  #info {
+    display: none;
+  }
+  
+  #quote{
+    display: none;
+  }
+}
+ 
 </style>
 
 <div id="about">
+  <img id="picture" alt="Jonathan Marsh" src="images/me-square.png" />
   <ul id="info">
     <li><img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />Cambridgeshire, UK</li>
     <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc</li>
     <li><img src="images/openmoji/1F50D.svg" alt="Emoji of a magnifying glass" />Software Developer role</li>
   </ul>
-  <p id="name"><span id="picture"><img alt="Jonathan Marsh" src="images/me-square.png" /></span>Jonathan Marsh</p>
+  <p id="name">Jonathan Marsh</p>
   <div id="social">
     <a href="https://github.com/j-m"><img id="github" alt="GitHub logo" height="50" src="images/logos/github.png" /></a>
     <a href="https://stackoverflow.com/users/4907552"><img alt="StackOverflow logo" height="50" src="images/logos/stackoverflow.png" /></a>
