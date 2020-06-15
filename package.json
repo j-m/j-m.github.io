@@ -1,6 +1,6 @@
 {
   "name": "jonmarsh.dev",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Source for https://www.jonmarsh.dev/",
   "main": "src/main.js",
   "dependencies": {
