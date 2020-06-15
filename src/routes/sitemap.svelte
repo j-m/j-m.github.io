@@ -5,7 +5,7 @@ var sitemap = {
   "Main": [
     {path: ".", title: "Home"},
     {path: "project", title: "Projects"},
-    {path: "privacy", title: "Privacy"},
+    {path: "policies", title: "Policies"},
     {path: "sitemap", title: "Sitemap"}
   ]
 }
@@ -34,10 +34,12 @@ for (let [key, project] of Object.entries(tagable.resources)) {
 <style>
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
   flex: 1;
+  min-width: 15rem;
 }
 .column ul li a {
   text-decoration: none!important;
