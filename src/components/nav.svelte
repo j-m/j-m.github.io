@@ -5,7 +5,6 @@
 <style>
 	nav {
 		border-bottom: 1px solid rgba(139, 139, 139, 0.1);
-    padding: 0 1rem;
     background-color: white;
     position: fixed;
     top: 0;
@@ -81,6 +80,7 @@
     color: black!important;
     font-weight: bold;
     float: left;
+    padding-left: 1rem;
   }
   
   #menutoggle {
@@ -94,7 +94,7 @@
   #menutoggle ~ label img {
     height: 2rem;
     width: 2rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     float: right;
   }
   
@@ -113,7 +113,7 @@
 
 <nav>
 	<ul>
-    <input type="checkbox" id="menutoggle" name="menutoggle" checked/>
+    <input type="checkbox" id="menutoggle" name="menutoggle"/>
     <a href="." id="JonMarsh">JonMarsh</a>
     <label for="menutoggle">
       <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
@@ -129,4 +129,3 @@
     </span>
 	</ul>
 </nav>
-

@@ -9,6 +9,10 @@ a {
 a:hover {
   background: yellow;
 }
+img {
+  display: inline-block;
+  width: 3rem;
+}
 </style>
 
 <h2>Copyright</h2>
@@ -51,7 +55,12 @@ No adaptation or use of any kind of any of our registered trademarks or copyrigh
 
 <hr/>
 <h2>OpenEmoji</h2>
-<p>The emojis used on the home page were designed by OpenMoji. No changes made. License: CC BY-SA 4.0</p>
+<p>The emojis used below were designed by OpenMoji. No changes made. License: CC BY-SA 4.0</p>
+<img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />
+<img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />
+<img src="images/openmoji/1F50D.svg" alt="Emoji of a magnifying glass" />
+<img src="images/openmoji/E24E.svg" alt="Emoji of a close icon (close navigation menu)" />
+<img src="images/openmoji/E250.svg" alt="Emoji of a hamburger icon (open navigation menu)" />
 <p>You, the visitor, must not obtain any of OpenMoji's emojis from jonmarsh.dev, please refer to <a href="https://openmoji.org/">OpenMoji's website</a> to acquire your own copy.</p>
 
 <br/>
