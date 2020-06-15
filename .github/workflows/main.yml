@@ -46,4 +46,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
+          CLEAN: true
+          CLEAN_EXCLUDE: '["CNAME"]'
           FOLDER: __sapper__/export
