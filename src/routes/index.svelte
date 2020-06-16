@@ -8,10 +8,10 @@
   height: 100%;
   grid-template-areas: 
   ". . . ."
-  ". picture info ."
-  ". picture name ."
-  ". picture social ."
-  ". picture quote ."
+  ". portrait info ."
+  ". portrait name ."
+  ". portrait social ."
+  ". portrait quote ."
   ". . . .";
   grid-template-columns: 1fr 15rem auto 15rem 1fr;
   grid-template-rows: 1fr auto auto auto auto 1fr;
@@ -26,10 +26,12 @@
   position: relative;
 }
 
-#picture {
-  grid-area: picture;
+#portrait {
+  grid-area: portrait;
+}
+
+#portrait img {
   border-radius: 50%;
-  display: block;
   margin: 0 auto;
   height: 15rem;
   width: 15rem;
@@ -101,7 +103,7 @@
   #about {
     grid-template-areas: 
     ". . ."
-    "picture name ."
+    "portrait name ."
     "info social ."
     "info quote ."
     ". . .";
@@ -124,7 +126,7 @@
   #about {
     grid-template-areas: 
       ". . ."
-      ". picture ."
+      ". portrait ."
       ". name ."
       ". social ."
       ". . .";
@@ -144,7 +146,11 @@
 </style>
 
 <div id="about">
-  <img id="picture" alt="Jonathan Marsh" src="images/me-square.png" />
+  <picture id="portrait">
+    <source type="image/jp2" srcset="images/me.jp2"> 
+    <source type="image/webp" srcset="images/me.webp"> 
+    <img src="images/me.png" alt="Jonathan Marsh">
+  </picture>
   <ul id="info">
     <li><img src="images/openmoji/E0A9.svg" alt="Emoji of a red location indicator" />Cambridgeshire, UK</li>
     <li><img src="images/openmoji/1F393.svg" alt="Emoji of a graduation cap" />Computer Science BSc</li>
