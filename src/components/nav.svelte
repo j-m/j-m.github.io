@@ -21,27 +21,12 @@
     }
   }
 
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-	li {
-		display: block;
-  }
-  
-  ul span:nth-of-type(1) li {
+  span:nth-of-type(1) div {
     float: left;
     margin-right: 1rem;
   }
   
-  ul span:nth-of-type(2) li {
+  span:nth-of-type(2) div {
     float: right;
     margin-left: 1rem;
   }
@@ -74,7 +59,12 @@
   }
   
   #menutoggle ~ label {
-    float: right;
+    display: none;
+  }
+  
+  #menutoggle:checked ~ span:nth-of-type(2){
+    display: block;
+    margin-right: 1rem;
   }
   
   #menutoggle ~ label img {
@@ -82,10 +72,6 @@
     width: 2rem;
     padding: 0.5rem;
     float: right;
-  }
-  
-  #menutoggle:checked ~ span:nth-of-type(2){
-    display: none;
   }
   
   #menutoggle:checked ~ label img:nth-of-type(2){
@@ -97,7 +83,12 @@
   }
   
   @media only screen and (max-width: 40rem) {    
-    nav ul span:nth-of-type(2) li {
+    #menutoggle ~ label {
+      display: block;
+      float: right;
+    }
+  
+    span:nth-of-type(2) div {
       display: block;
       width: 100%;
     }
@@ -107,35 +98,26 @@
   		border-bottom-color: transparent!important;
       text-decoration: underline;
     }
-  }
-  
-  @media only screen and (min-width: 40rem) {
-    #menutoggle ~ label {
-      display: none;
-    }
     
     #menutoggle:checked ~ span:nth-of-type(2){
-      display: block;
-      margin-right: 1rem;
+      display: none;
     }
   }
 </style>
 
 <nav>
-	<ul>
-    <input type="checkbox" id="menutoggle" name="menutoggle" checked/>
-    <a href="." id="JonMarsh">JonMarsh</a>
-    <label for="menutoggle">
-      <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
-      <img alt="close navigation menu (close icon emoji)" src="images/openmoji/E24E.svg"/>
-    </label> 
-    <span>
-  		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-  		<li><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project">Projects</a></li>
-    </span>
-    <span>
-      <li><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></li>
-      <li><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies">Policies</a></li>
-    </span>
-	</ul>
+  <input type="checkbox" id="menutoggle" name="menutoggle" checked/>
+  <a href="." id="JonMarsh">JonMarsh</a>
+  <label for="menutoggle">
+    <img alt="open navigation menu (hamburger icon emoji)" src="images/openmoji/E250.svg"/>
+    <img alt="close navigation menu (close icon emoji)" src="images/openmoji/E24E.svg"/>
+  </label> 
+  <span>
+		<div><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></div>
+		<div><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project">Projects</a></div>
+  </span>
+  <span>
+    <div><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></div>
+    <div><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies">Policies</a></div>
+  </span>
 </nav>

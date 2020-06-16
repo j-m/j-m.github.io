@@ -10,7 +10,9 @@
   "delphi":{"parent": "language","data":{"title": "Delphi Pascal"}},
   "graphql":{"parent": "api","data": {"title": "GraphQL"}},
   "hackathon":{"children":["winner"],"data":{"title": "Hackathon"}},
+  "java":{"parent": "language","data":{"title": "Java"}},
   "javascript":{"parent": "language","data":{"title": "JavaScript"}},
+  "mod":{"data":{"title": "Mod"}},
   "mongo":{"data":{"title": "Mongo"}},
   "npm":{"data":{"title": "NPM", "description": "Node Package Manager. These are the npm projects that I have contributed to or publish myself."}},
   "language":{"children":["actionscript2","c","csharp","cpp","delphi","javascript","typescript"],"data":{"title": "Programming Language", "description": "The children of this tag are the various programming languages I have used over the years."}},
@@ -20,20 +22,25 @@
   "svelte":{"data":{"title": "Svelte"}},
   "svg":{"data":{"title": "SVG"}},
   "typescript":{"parent": "language","data":{"title": "TypeScript"}},
-  "website":{"parent": "hackathon","data":{"title": "Website"}},
+  "website":{"data":{"title": "Website"}},
   "winner":{"data":{"title": "Winner", "description": "This project received an award at a hackathon."}}
 },
 "tagged":[
   {"resourceID":"tagable","tagID":"npm"},
+  {"resourceID":"tagable","tagID":"typescript"},
   {"resourceID":"210CT","tagID":"cpp"},
+  {"resourceID":"210CT","tagID":"coursework"},
+  {"resourceID":"TourOfBritain","tagID":"coursework"},
   {"resourceID":"TourOfBritain","tagID":"mongo"},
   {"resourceID":"TourOfBritain","tagID":"angular"},
+  {"resourceID":"TourOfBritain","tagID":"website"},
   {"resourceID":"JonHash","tagID":"c"},
   {"resourceID":"JonHash","tagID":"cpp"},
   {"resourceID":"JonHash","tagID":"coursework"},
   {"resourceID":"jonmarshdev","tagID":"svelte"},
   {"resourceID":"jonmarshdev","tagID":"website"},
   {"resourceID":"Oaty","tagID":"typescript"},
+  {"resourceID":"Oaty","tagID":"npm"},
   {"resourceID":"Browsability","tagID":"javascript"},
   {"resourceID":"Browsability","tagID":"rest"},
   {"resourceID":"FaktNews","tagID":"javascript"},
@@ -44,10 +51,13 @@
   {"resourceID":"PulfrichBird","tagID":"game"},
   {"resourceID":"PulfrichBird","tagID":"winner"},
   {"resourceID":"DLE","tagID":"javascript"},
+  {"resourceID":"DLE","tagID":"winner"},
   {"resourceID":"Widgets","tagID":"javascript"},
   {"resourceID":"Widgets","tagID":"svg"},
   {"resourceID":"TNA","tagID":"javascript"},
+  {"resourceID":"TNA","tagID":"hackathon"},
   {"resourceID":"FaceSwap","tagID":"javascript"},
+  {"resourceID":"FaceSwap","tagID":"hackathon"},
   {"resourceID":"BSQuiz","tagID":"actionscript2"},
   {"resourceID":"Adventure","tagID":"actionscript2"},
   {"resourceID":"Adventure","tagID":"game"},
@@ -65,13 +75,20 @@
   {"resourceID":"Encrypt","tagID":"delphi"},
   {"resourceID":"Encrypt","tagID":"coursework"},
   {"resourceID":"Maze","tagID":"csharp"},
-  {"resourceID":"Maze","tagID":"game"}
+  {"resourceID":"Maze","tagID":"game"},
+  {"resourceID":"RTP","tagID":"mod"},
+  {"resourceID":"RTP","tagID":"java"},
+  {"resourceID":"GR","tagID":"website"},
+  {"resourceID":"GR","tagID":"javascript"},
+  {"resourceID":"GR","tagID":"coursework"},
+  {"resourceID":"370","tagID":"coursework"},
+  {"resourceID":"370","tagID":"cpp"}
 ],
 "resources":{
   "tagable": {
-    "caption": "<img alt='GitHub commit activity' src='https://badgen.net/github/last-commit/j-m/tagable'/>",
-    "date": "",
-    "description": "A simple platform to tag abstracted resources with a hierarchy structure.",
+    "caption": "",
+    "date": "2019-05-25",
+    "description": "A simple platform to tag abstracted resources with a hierarchy structure. Used on this website.",
     "links": {
       "github":"https://github.com/j-m/tagable"
     },
@@ -79,18 +96,49 @@
     "preview": "",
     "title": "Tagable"
   },
+  "RTP": {
+    "caption": "",
+    "date": "2020-05-29",
+    "description": "A mod for Minecraft that allows mobs and players to teleport through nether portals whilst mounted on a horse, boat, minecart, or other entities. I host a server for my friends and we often want to transport villagers and pets long distances. However, with current mechanics, we have to dismount and remount all mobs on both sides of the portal, which is a pain to say the least - many mobs have been killed.",
+    "links": {
+      "github":"https://github.com/j-m/ride-through-portal"
+    },
+    "logo": "",
+    "preview": "./images/previews/RTP.png",
+    "title": "RideThroughPortal"
+  },
+  "GR": {
+    "caption": "",
+    "date": "2019-11-06",
+    "description": "Submitted as coursework to Coventry University, UK. A community-driven game review website. Allows each registrant to give a short and long review for each game on the website. The short review is limited to text and an overall positive/negative score whilst the long review is a score of 0-100 and can contain any markdown including images and videos. Used the GitFlow branching model and Continuous Integration and Development to get 100% code coverage. The module required the random name for all publicly viewable repositories.",
+    "links": {
+      "github":"https://github.com/j-m/AnvomYWz1K",
+      "demo": "https://github.com/j-m/AnvomYWz1K#viewing"
+    },
+    "logo": "",
+    "preview": "./images/previews/GR.png",
+    "title": "AnvomYWz1K"
+  },
+  "370": {
+    "caption": "",
+    "date": "2020-02-21",
+    "description": "Submitted as coursework to Coventry University, UK. Parallel and Distributed Programming. This module covered how to write code so that it runs more efficiently and reliably using concurrency, parallelism (MPI) and distribution (OpenMP). The coursework required a portfolio of each technique as well as an assignment to create a simulation of a mars rover with a subsumption architecture.",
+    "logo": "",
+    "preview": "",
+    "title": "370CT"
+  },
   "210CT": {
     "caption": "",
-    "date": "",
-    "description": "Programming, Algorithms, and Data Structures. console application. 13 complex tasks e.g. N-Queen Problem, Hamiltonian Paths, and string edit distance.C++ templates which automatically detected the data type of user input. I also sanitised, type checked, and error checked their input. ",
+    "date": "2017-10-02",
+    "description": "Submitted as coursework to Coventry University, UK. Programming, Algorithms, and Data Structures. This coursework was to create a console application (with a menu) that runs 13 complex tasks e.g. N-Queen Problem, Hamiltonian Paths, and string edit distance. I used C++ templates which automatically detected the data type of user input and also sanitised, type checked, and error checked their input. ",
     "logo": "",
     "preview": "",
     "title": "210CT"
   },
   "TourOfBritain": {
     "caption": "",
-    "date": "",
-    "description": "My first MEAN stack application.",
+    "date": "2018-03-15",
+    "description": "My first MEAN stack application. Submitted as coursework to Coventry University, UK. The module tasked us with creating a website for a bus company, it was up to us what the website did. Most people chose to do a simple booking system whilst I decided to be a bit more ambitious and create a recommendation website.",
     "logo": "",
     "preview": "",
     "title": "TourOfBritain"
@@ -98,7 +146,7 @@
   "JonHash": {
     "caption": "",
     "date": "2018-05-02",
-    "description": "One part of module from second year at university was to design my own hashing algorithm. I am in the process of converting it to C from C++.",
+    "description": "One part of a module from second year at university was to design my own hashing algorithm. I am in the process of converting it to C from C++.",
     "links": {
       "readMore": {
         "type": "html-url",
@@ -113,7 +161,7 @@
   "jonmarshdev": {
     "caption": "",
     "date": "2019-06-04",
-    "description": "This website! Completely redesigned and overhauled to use Svelte 3.",
+    "description": "This website! Completely redesigned and overhauled to use <s>MEAN</s> <s>MERN</s> <s>Svelte 3</s> Sapper. As you can tell I use my website for playing around with various frameworks/stacks. Eventually I'll get around to putting more content on here...",
     "links": {
       "github":"https://github.com/j-m/jonmarsh.dev"
     },
@@ -124,7 +172,7 @@
   "Oaty": {
     "caption": "",
     "date": "2019-05-02",
-    "description": "Get objects from an array in O(1) time. Achieved by transposing the array using the keys of each object. Uses a lot of memory.",
+    "description": "An idea I had to retrieving objects from an array in O(1) time. Achieved by transposing the array using the keys of each object. Uses a lot of memory.",
     "links": {
       "github": "https://github.com/jmsv/oaty"
     },
@@ -155,7 +203,7 @@
     "title": "FaktNews"
   },
   "PulfrichBird": {
-    "caption": "test",
+    "caption": "",
     "date": "2018-02-03",
     "description": "3D Flappy Bird using the pulfrich effect. Get a pair of dark tinted sunglasses and pop out the left lens, and play away!",
     "links": {
@@ -275,7 +323,7 @@
   "Maze": {
     "caption": "",
     "date": "2012-07-01",
-    "description": "A simple procedural maze generator that I created in a couple of days during my year 10 works experience.",
+    "description": "A simple procedural maze generator that I created in a couple of days during my year 10 works experience. When I learn a new language I use maze generation as my Hello World; it's a simple algorithm that introduces the syntax for simple things like variable assignment and loops, as well as function declaration, calls, and definitions - none of which, \"Hello World\" would cover.",
     "logo": "",
     "preview": "./images/previews/csmaze.png",
     "title": "Maze"

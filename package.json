@@ -1,6 +1,6 @@
 {
   "name": "jonmarsh.dev",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Source for https://www.jonmarsh.dev/",
   "main": "src/main.js",
   "dependencies": {
@@ -16,7 +16,8 @@
     "npm-run-all": "^4.1.5",
     "rollup": "^2.16.1",
     "rollup-plugin-svelte": "^5.2.2",
-    "sapper": "^0.27.15",
+    "rollup-plugin-terser": "^5.3.0",
+    "sapper": "^0.27.16",
     "svelte": "^3.23.2",
     "tagable": "^0.4.1"
   },

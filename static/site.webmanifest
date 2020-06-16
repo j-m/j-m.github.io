@@ -1,6 +1,13 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "JonathanMarsh",
+  "short_name": "JonM",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#edf1f5",
+  "background_color": "#edf1f5",
+  "description": "An offline version of https://www.jonmarsh.dev",
+  "lang": "en-GB",
+  "categories": ["portfolio", "games", "devtools"],
   "icons": [
     {
       "src": "images/favicon/android-chrome-192x192.png",
@@ -12,8 +19,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
