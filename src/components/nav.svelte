@@ -74,7 +74,12 @@
   }
   
   #menutoggle ~ label {
-    float: right;
+    display: none;
+  }
+  
+  #menutoggle:checked ~ span:nth-of-type(2){
+    display: block;
+    margin-right: 1rem;
   }
   
   #menutoggle ~ label img {
@@ -82,10 +87,6 @@
     width: 2rem;
     padding: 0.5rem;
     float: right;
-  }
-  
-  #menutoggle:checked ~ span:nth-of-type(2){
-    display: none;
   }
   
   #menutoggle:checked ~ label img:nth-of-type(2){
@@ -97,6 +98,11 @@
   }
   
   @media only screen and (max-width: 40rem) {    
+    #menutoggle ~ label {
+      display: block;
+      float: right;
+    }
+  
     nav ul span:nth-of-type(2) li {
       display: block;
       width: 100%;
@@ -107,16 +113,9 @@
   		border-bottom-color: transparent!important;
       text-decoration: underline;
     }
-  }
-  
-  @media only screen and (min-width: 40rem) {
-    #menutoggle ~ label {
-      display: none;
-    }
     
     #menutoggle:checked ~ span:nth-of-type(2){
-      display: block;
-      margin-right: 1rem;
+      display: none;
     }
   }
 </style>
