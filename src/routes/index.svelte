@@ -28,6 +28,7 @@
 
 #portrait {
   grid-area: portrait;
+  text-align: center;
 }
 
 #portrait img {
@@ -97,17 +98,17 @@
 
 @media only screen and (max-width: 70rem) { 
   #name {
-    word-spacing: 100vw;
+    max-width: 10ch;
   }
   
   #about {
     grid-template-areas: 
-    ". . ."
-    "portrait name ."
-    "info social ."
-    "info quote ."
-    ". . .";
-    grid-template-columns: 15rem auto 1fr;
+    ". . . ."
+    ". portrait name ."
+    ". info social ."
+    ". info quote ."
+    ". . . .";
+    grid-template-columns: 1fr 15rem auto 1fr;
     grid-template-rows: 1fr 15rem auto auto 1fr;
   }
   
