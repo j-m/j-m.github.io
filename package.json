@@ -3,21 +3,20 @@
   "version": "0.6.0",
   "description": "Source for https://www.jonmarsh.dev/",
   "main": "src/main.js",
-  "dependencies": {
-    "compression": "^1.7.4",
-    "polka": "next",
-    "sirv": "^0.4.6"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@rollup/plugin-replace": "^2.3.3",
+    "compression": "^1.7.4",
+    "copyfiles": "^2.3.0",
     "npm-run-all": "^4.1.5",
+    "polka": "next",
     "rollup": "^2.16.1",
     "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^5.3.0",
     "sapper": "^0.27.16",
+    "sirv": "^0.4.6",
     "svelte": "^3.23.2",
     "tagable": "^0.4.1"
   },
@@ -25,6 +24,7 @@
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
+    "dist": "copyfiles --verbose --flat \"./dist/*\" \"./__sapper__/export\"",
     "start": "node build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",

@@ -18,6 +18,10 @@ jobs:
         run: |
           npm install
           npm run export
+          
+      - name: Dist
+        run: | 
+          npm run dist
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
