@@ -1,0 +1,6 @@
+# Group 1
+User-agent: *
+Disallow: /client/
+Disallow: /images/
+
+Sitemap: https://www.jonmarsh.dev/sitemap.xml
