@@ -114,10 +114,10 @@
   </label> 
   <span>
 		<div><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></div>
-		<div><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project">Projects</a></div>
+		<div><a rel=prefetch aria-current="{segment === 'project' ? 'page' : undefined}" href="project/">Projects</a></div>
   </span>
   <span>
-    <div><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap">Site Map</a></div>
-    <div><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies">Policies</a></div>
+    <div><a aria-current="{segment === 'sitemap' ? 'page' : undefined}" href="sitemap/">Site Map</a></div>
+    <div><a aria-current="{segment === 'policies' ? 'page' : undefined}" href="policies/">Policies</a></div>
   </span>
 </nav>
